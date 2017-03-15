@@ -3,3 +3,5 @@
 node_modules/
 src/*.map
 src/*.js
+test/*.js
+test/*.map
