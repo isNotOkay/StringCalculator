@@ -14,7 +14,7 @@ Im Zuge dieses Tutorials soll mittels TDD ein Taschenrechner für Zeichenketten 
 Zum Verwalten der Abhängigkeiten nutzen wir den Paketmanager [npm], der Bestandteil der populären JavaScript-Laufzeitumgebung [nodeJS] ist und eine riesige Palette an Javascript-Modulen beherbergt. 
 Hierzu laden wir die aktuellste Version herunter ("Latest Features") und tragen den Installationsordner in den Umgebungsvariablen ein:
 
-[ INSERT Bild mit Pfad in Umgebungsvariablen]
+![Alt text](images/readme/umgebungsvariablen.png?raw=true "Title")
 
 Der Paketmanager lässt sich jetzt direkt von der Kommandozeile aus aufrufen ohne jedes Mal den genauen Pfad angeben zu müssen:
 
@@ -28,7 +28,7 @@ $ npm --version
 > Abhängigkeiten aufzulösen und externe Pakete bei Bedarf herunterzuladen.
 
 
-Zum initialisieren des Projekts erstellen wir einen neuen Ordner namens "StringCalculator". Im neu angelegten Ordner rufen wir folgenden Befehl auf:
+Zum initialisieren des Projekts erstellen wir einen neuen Ordner namens "string-calculator". Im neu angelegten Ordner rufen wir folgenden Befehl auf:
 
 ```sh
 $ npm init
@@ -36,7 +36,7 @@ $ npm init
 
 Nachdem wir alle Eingabeaufforderungen bestätigt haben erzeugt der Paketmanager eine Datei namens *package.json*, welche zunächst nur allgemeine Metadaten enthält:
 
-[ INSERT Bild mit erstellter package.json]
+![Alt text](images/readme/package_json_1.png?raw=true "Title")
 
 Mit der jetzt vorhandenen *package.json* können wir externe Pakete herunterladen und mit dem Zusatz *--save-dev* einmalig als Abhängigkeit registrieren. 
 Für dieses Tutorial benötigen wir das Test-Framework [mocha] sowie die Assertion-Bibliothek [chai]:
@@ -53,13 +53,27 @@ Ein kostenloser Editor mit herausragender Autovervollständigung ist beispielswe
 Nachdem das Programm heruntergeladen und installiert wurde, lässt sich unser überschaubares Projekt einfach als Ordner öffnen und direkt bearbeiten. 
 Die Projektstruktur sollte folgendermaßen aussehen:
 
-[INSERT Bild mit Projektstuktur in VS Code]
+![Alt text](images/readme/projekt_struktur_1.png?raw=true "Title")
 
 Wie zu sehen besteht das Projekt zur Zeit nur aus einer *package.json* und den heruntergeladenen Paketen im Ordner *node_modules*. 
 Wir legen zwei weitere Ordner *src* und *test* für Quellcode und zugehörige Unit-Tests an. 
 Zudem erstellen wir eine Datei namens *tsconfig.json* in der wir spezifizieren welche Typescript-Dateien (mit der Endung *.ts*) der eingebettete Transpiler von Visual Studio Code übersetzen soll:
 
-[INSERT Bild mit Projektstuktur in VS Code 2]
+```json
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ]
+}
+```
 
 Damit alle *.ts* nach jeder Änderung erneut transpiliert werden, konfigurieren wir einen Visual Studio spezifischen [Task].
 Alternativ können wir auch das npm-Modul [tsc] global installieren und im *watch*-Modus starten:
