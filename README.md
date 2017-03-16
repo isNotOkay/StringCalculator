@@ -3,6 +3,12 @@
 
 ### Vorbereitungen
 
+Im Zuge dieses Tutorials soll mittels TDD Taschenrechner für Zeichenketten auf Basis folgender Technologien entwickelt werden:
+
+* Sprache: Typeskript
+* Paketmanager: npm 
+* Test-Framework: mocha
+
 #### Paketmanager und externe Module installieren
 
 Zum Verwalten der Abhängigkeiten nutzen wir den Paketmanager [npm], der Bestandteil der populären JavaScript-Laufzeitumgebung [nodeJS] ist und eine riesige Palette an Javascript-Modulen beherbergt. 
@@ -55,7 +61,7 @@ Zudem erstellen wir eine Datei namens *tsconfig.json* in der wir spezifizieren w
 
 [INSERT Bild mit Projektstuktur in VS Code 2]
 
-Damit alle *.ts* nach jeder Änderung erneut transpiliert werden, konfigurieren wir einen Visual Studio spezifischen [Visual Studio TS Task].
+Damit alle *.ts* nach jeder Änderung erneut transpiliert werden, konfigurieren wir einen Visual Studio spezifischen [Task].
 Alternativ können wir auch das npm-Modul [tsc] global installieren und im *watch*-Modus starten:
 
 ```sh
@@ -84,6 +90,8 @@ Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder
 [Visual Studio Code]: <https://code.visualstudio.com/>
 [Task]: <https://code.visualstudio.com/docs/languages/typescript>
 [tsc]: <https://www.typescriptlang.org/index.html#download-links>
+[Transpiler]: <https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them>
+[String Calculator]: <http://osherove.com/tdd-kata-1/>
 
 
 
