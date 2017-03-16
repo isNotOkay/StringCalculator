@@ -3,11 +3,11 @@
 
 ### Vorbereitungen
 
-Im Zuge dieses Tutorials soll mittels TDD Taschenrechner für Zeichenketten auf Basis folgender Technologien entwickelt werden:
+Im Zuge dieses Tutorials soll mittels TDD ein Taschenrechner für Zeichenketten auf Basis folgender Technologien entwickelt werden:
 
-* Sprache: Typeskript
-* Paketmanager: npm 
-* Test-Framework: mocha
+* Typeskript
+* npm 
+* mocha
 
 #### Paketmanager und externe Module installieren
 
