@@ -9,6 +9,17 @@ Im Zuge dieses Tutorials soll mittels TDD ein Taschenrechner für Zeichenketten 
 * [npm]
 * [mocha]
 
+Typescript erweitert Javascript um einige nützliche Features wie Typen, Klassen und Interfaces. 
+Die Syntax ähnelt stark der von klassischen Programmiersprachen, jedoch gibt es bei der Implementierung wesentliche Unterschiede.
+In der folgenden Tabelle sind Gemeinsamkeiten und Unterschiede am Beispiel von Java gegenübergestellt:
+
+| Java | Typescript |
+| ------ | ------ |
+| ... | ... |
+| ... | ... |
+| ... | ... |
+
+
 #### Paketmanager und externe Module installieren
 
 Zum Verwalten der Abhängigkeiten nutzen wir den Paketmanager [npm], der Bestandteil der populären JavaScript-Laufzeitumgebung [nodeJS] ist und eine riesige Palette an Javascript-Modulen beherbergt. 
