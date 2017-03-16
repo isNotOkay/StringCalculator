@@ -1,3 +1,11 @@
+
+```typescript
+let s = "Typescript syntax highlighting";
+```
+
+
+
+
 ### Installation
 Install local dependencies and mocha:
 ```sh
@@ -31,5 +39,31 @@ Run tests:
 ```sh
 mocha
 ```
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
