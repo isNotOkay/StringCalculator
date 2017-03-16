@@ -96,7 +96,6 @@ Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder
 
 #### Finales Projekt auschecken und ausführen
 
-
 [npm]: <https://www.npmjs.com/>
 [nodeJS]: <https://nodejs.org/en/>
 [mocha]: <https://mochajs.org/>
@@ -108,49 +107,11 @@ Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder
 [Transpiler]: <https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them>
 [String Calculator]: <http://osherove.com/tdd-kata-1/>
 
-
-
-
 ```typescript
 let s = "Typescript syntax highlighting";
 ```
 
 
-
-
-### Installation
-Install local dependencies and mocha:
-```sh
-$ npm install
-$ npm install -g mocha
-```
-
-### Step by step Installation
-
-Create package.json and install dependencies:
-```sh
-npm init
-npm install --global mocha
-npm install --save-dev mocha
-npm install --save-dev chai
-```
-Install type definitions to improve autocompletion:
-```sh
-npm install --save-dev @types/mocha
-npm install --save-dev @types/chai
-```
-
-
-### Usage
-Watch for changes in .ts files and recompile of neccessary:
-```sh
-tsc --watch
-```
-
-Run tests:
-```sh
-mocha
-```
  
  
  
