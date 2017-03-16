@@ -5,7 +5,7 @@
 
 Im Zuge dieses Tutorials soll mittels TDD ein Taschenrechner für Zeichenketten auf Basis folgender Technologien entwickelt werden:
 
-* Typeskript
+* Typescript
 * npm 
 * mocha
 
@@ -48,7 +48,7 @@ $ npm install --save-dev chai
 ```
 
 #### Entwicklungsumgebung aufsetzen
-Das Projekt kann im Prinzip mit jedem beliebigen Texteditor bearbeitet werden, jedoch bietet sich eine IDE mit einer guten Autovervollständigung für Typeskript an. 
+Das Projekt kann im Prinzip mit jedem beliebigen Texteditor bearbeitet werden, jedoch bietet sich eine IDE mit einer guten Autovervollständigung für Typescript an. 
 Ein kostenloser Editor mit herausragender Autovervollständigung ist beispielsweise [Visual Studio Code].
 Nachdem das Programm heruntergeladen und installiert wurde, lässt sich unser überschaubares Projekt einfach als Ordner öffnen und direkt bearbeiten. 
 Die Projektstruktur sollte folgendermaßen aussehen:
@@ -57,7 +57,7 @@ Die Projektstruktur sollte folgendermaßen aussehen:
 
 Wie zu sehen besteht das Projekt zur Zeit nur aus einer *package.json* und den heruntergeladenen Paketen im Ordner *node_modules*. 
 Wir legen zwei weitere Ordner *src* und *test* für Quellcode und zugehörige Unit-Tests an. 
-Zudem erstellen wir eine Datei namens *tsconfig.json* in der wir spezifizieren welche Typeskript-Dateien (mit der Endung *.ts*) der eingebettete Transpiler von Visual Studio Code übersetzen soll:
+Zudem erstellen wir eine Datei namens *tsconfig.json* in der wir spezifizieren welche Typescript-Dateien (mit der Endung *.ts*) der eingebettete Transpiler von Visual Studio Code übersetzen soll:
 
 [INSERT Bild mit Projektstuktur in VS Code 2]
 
