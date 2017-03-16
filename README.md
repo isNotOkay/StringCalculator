@@ -42,18 +42,18 @@ $ npm install --save-dev chai
 #### Entwicklungsumgebung aufsetzen
 Das Projekt kann im Prinzip mit jedem beliebigen Texteditor bearbeitet werden, jedoch bietet sich eine IDE mit einer guten Autovervollständigung für Typeskript an. 
 Ein kostenloser Editor mit herausragender Autovervollständigung ist beispielsweise [Visual Studio Code].
-Nachdem das Programm heruntergeladen und installiert wurde lässt sich unser überschaubares Projekte einfach als Ordner öffnen und direkt bearbeiten. 
+Nachdem das Programm heruntergeladen und installiert wurde, lässt sich unser überschaubares Projekt einfach als Ordner öffnen und direkt bearbeiten. 
 Die Projektstruktur sollte folgendermaßen aussehen:
 
 [INSERT Bild mit Projektstuktur in VS Code]
 
-Wie zu sehen enthält das Projekt zur Zeit nur eine *package.json* und die heruntergeladenen Pakete im Ordner *node_modules*. 
-Wir legen zwei weitere Ordner *src* und *test* für den Quellcode und Unit-Tests an. 
-Zudem erstellen wir eine Datei *tsconfig.json* damit der Typeskript-Transpiler tsc weiß welche Dateien er in Javascript übersetzen soll:
+Wie zu sehen besteht das Projekt zur Zeit nur aus einer *package.json* und den heruntergeladenen Paketen im Ordner *node_modules*. 
+Wir legen zwei weitere Ordner *src* und *test* für Quellcode und zugehörige Unit-Tests an. 
+Zudem erstellen wir eine Datei namens *tsconfig.json* in der wir spezifizieren welche Typeskript-Dateien (mit der Endung *.ts*) der eingebettete Transpiler von Visual Studio Code übersetzen soll:
 
 [INSERT Bild mit Projektstuktur in VS Code 2]
 
-Damit Typeskript-Dateien mit der Endung *.ts" nach jeder Änderung erneut transpiliert werden, konfigurieren wir einen Visual Studio spezifischen [Visual Studio TS Task].
+Damit alle *.ts" nach jeder Änderung erneut transpiliert werden, konfigurieren wir einen Visual Studio spezifischen [Visual Studio TS Task].
 Alternativ können wir auch das npm-Modul [tsc] global installieren und im *watch*-Modus starten:
 
 ```sh
