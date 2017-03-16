@@ -5,9 +5,9 @@
 
 Im Zuge dieses Tutorials soll mittels TDD ein Taschenrechner für Zeichenketten auf Basis folgender Technologien entwickelt werden:
 
-* Typescript
-* npm 
-* mocha
+* [Typescript]
+* [npm]
+* [mocha]
 
 #### Paketmanager und externe Module installieren
 
@@ -89,6 +89,7 @@ Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder
 [chai]: <http://chaijs.com/>
 [Visual Studio Code]: <https://code.visualstudio.com/>
 [Task]: <https://code.visualstudio.com/docs/languages/typescript>
+[Typescript]: <https://www.typescriptlang.org/>
 [tsc]: <https://www.typescriptlang.org/index.html#download-links>
 [Transpiler]: <https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them>
 [String Calculator]: <http://osherove.com/tdd-kata-1/>
