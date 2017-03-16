@@ -10,7 +10,11 @@ Hierzu laden wir die aktuellste Version herunter ("Latest Features") und tragen 
 
 [ INSERT Bild mit Pfad in Umgebungsvariablen]
 
-Der Paketmanager lässt sich jetzt direkt per  *npm* von der Kommandozeile aus aufrufen ohne jedes Mal den genauen Pfad angeben zu müssen.
+Der Paketmanager lässt sich jetzt direkt von der Kommandozeile aus aufrufen ohne jedes Mal den genauen Pfad angeben zu müssen:
+
+```sh
+$ npm --version
+```
 
 > Hinweis: 
 > Der Paketmanager und die Laufzeitumgebung sind zwei vollkommen verschiedene Programme. 
@@ -18,19 +22,17 @@ Der Paketmanager lässt sich jetzt direkt per  *npm* von der Kommandozeile aus a
 > Abhängigkeiten aufzulösen und externe Pakete bei Bedarf herunterzuladen.
 
 
-Zum initialisieren des Projekts erstellen wir einen  neuen Ordner namens "StringCalculator". Im neu angelegten Ordner rufen wir per Kommandozeile folgenden Befehl auf:
+Zum initialisieren des Projekts erstellen wir einen neuen Ordner namens "StringCalculator". Im neu angelegten Ordner rufen wir folgenden Befehl auf:
 
 ```sh
 $ npm init
 ```
 
-Nachdem wir alle Eingabeaufforderungen bestätigt haben erzeugt der Paketmanager eine Datei namens *package.json*:
+Nachdem wir alle Eingabeaufforderungen bestätigt haben erzeugt der Paketmanager eine Datei namens *package.json*, welche zunächst nur allgemeine Metadaten enthält:
 
 [ INSERT Bild mit erstellter package.json]
 
-Diese Datei enthält u.A. Metadaten und Abhängigkeiten zu externen Paketen.
-
-Nun können wir externe Pakete herunterladen und mit dem Zusatz *--save-dev* in der *package.json* einmalig als Abhängigkeit registrieren. 
+Mit der jetzt vorhandenen *package.json* können wir externe Pakete herunterladen und mit dem Zusatz *--save-dev* einmalig als Abhängigkeit registrieren. 
 Für dieses Tutorial benötigen wir das Test-Framework [mocha] sowie die Assertion-Bibliothek [chai]:
 
 ```sh
@@ -53,7 +55,7 @@ Zudem erstellen wir eine Datei namens *tsconfig.json* in der wir spezifizieren w
 
 [INSERT Bild mit Projektstuktur in VS Code 2]
 
-Damit alle *.ts" nach jeder Änderung erneut transpiliert werden, konfigurieren wir einen Visual Studio spezifischen [Visual Studio TS Task].
+Damit alle *.ts* nach jeder Änderung erneut transpiliert werden, konfigurieren wir einen Visual Studio spezifischen [Visual Studio TS Task].
 Alternativ können wir auch das npm-Modul [tsc] global installieren und im *watch*-Modus starten:
 
 ```sh
@@ -80,7 +82,7 @@ Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder
 [mocha]: <https://mochajs.org/>
 [chai]: <http://chaijs.com/>
 [Visual Studio Code]: <https://code.visualstudio.com/>
-[Visual Studio TS Task]: <https://code.visualstudio.com/docs/languages/typescript>
+[Task]: <https://code.visualstudio.com/docs/languages/typescript>
 [tsc]: <https://www.typescriptlang.org/index.html#download-links>
 
 
