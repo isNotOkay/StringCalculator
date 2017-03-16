@@ -10,8 +10,8 @@ Im Zuge dieses Tutorials soll mittels TDD ein Taschenrechner für Zeichenketten 
 * [mocha]
 
 Typescript erweitert Javascript um einige nützliche Features wie Typen, Klassen und Interfaces. 
-Die Syntax ähnelt stark der von klassischen Programmiersprachen, jedoch gibt es bei der Implementierung wesentliche Unterschiede.
-In der folgenden Tabelle sind Gemeinsamkeiten und Unterschiede am Beispiel von Java gegenübergestellt:
+Die Syntax ähnelt stark der von klassischen Programmiersprachen, jedoch gibt es bei der Art und Weise wie Typescript die genannten Sprachmerkmale umsetzt wesentliche Unterschiede.
+In der folgenden Tabelle sind die Unterschiede am Beispiel von Java gegenübergestellt:
 
 | Java | Typescript |
 | ------ | ------ |
