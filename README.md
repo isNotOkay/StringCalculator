@@ -125,38 +125,48 @@ calculator.add("1,2,3,4,5"); // => returns 15
 Wir haben also ein Objekt *calculator* mit einer Methode *add*, die einen String aus komma-sepparierten Zahlen entgegennimmt, alle Zahlen aufaddiert und zurückliefert.
 
 
+TODO: Beschreibung der einzelnen Komponente mit Vergleich zu Java, Javascript
+- imports, assertion library
+- arrow functions
+- Test Suite ("describe")
+- Test Case ("it")
+- before block, initialisieren (analog zu java)
+- let (block scope)
 
 ```typescript
 import { expect } from 'chai';
 import { StringCalculator } from '../src/StringCalculator';
 
-describe('StringCalculator', function () {
+describe('StringCalculator', () => {
     let calculator;
 
     before(function () {
         calculator = new StringCalculator();
     });
 
-    it('soll bei eingabe "1" das ergebnis 1 zurückgeben', function () {
+    it('soll bei eingabe "1" das ergebnis 1 zurückgeben', () => {
         let result = calculator.add('1');
         expect(result).to.equal(1);
     });
 });
 ```
 
+
+Hieraus resultiert folgende Klasse:
+
 ```typescript
 export class StringCalculator {
-
     add(stringOfNumbers: string) {
         return 1;
     }
-
 }
 ```
 
+- export erklären
+- default konstruktor nicht explizit deklarieren (wie in java)
+- typen: any, string, number
+- return 1 damit test grün
 
-
-- Refactoring => String Parser (single responsibility, widerverwendbarkeit, Wartbarkeit)
 
 TODO:
 - User Story vorstellen
@@ -165,6 +175,8 @@ TODO:
 - Gedankengang mit Vergleich zu Umsetzung in Java/Typesript (später in Tabelle unten)
 => spread operator vs. for-schleife
 - Refactoring
+- Refactoring => String Parser (single responsibility, widerverwendbarkeit, Wartbarkeit)
+- 
 
 ![Alt text](images/readme/uml_diagramm_2.png?raw=true "Title")
  
