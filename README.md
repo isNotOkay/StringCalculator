@@ -58,6 +58,17 @@ $ npm install --save-dev mocha
 $ npm install --save-dev chai
 ```
 
+Zusätzlich müssen wir noch die Typdefinitionen der verwendeten Module installieren damit der Typescript-Transpiler keine Fehler anzeigt:
+
+```sh
+$ npm install --save-dev node
+$ npm install --save-dev mocha
+$ npm install --save-dev chai
+```
+
+
+
+
 #### Entwicklungsumgebung aufsetzen
 Das Projekt kann im Prinzip mit jedem beliebigen Texteditor bearbeitet werden, jedoch bietet sich eine IDE mit einer guten Autovervollständigung für Typescript an. 
 Ein kostenloser Editor mit herausragender Autovervollständigung ist beispielsweise [Visual Studio Code].
