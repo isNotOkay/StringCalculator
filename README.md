@@ -162,10 +162,14 @@ export class StringCalculator {
 }
 ```
 
-- export erklären
-- default konstruktor nicht explizit deklarieren (wie in java)
-- typen: any, string, number
-- return 1 damit test grün
+Typescript-Klassen haben, wie in Java auch, einen Default-Constructor der nicht explizit angegeben werden muss.
+Das Schlüsselwort *export* ist zwingend notwendig damit *StringCalculator* von anderen Modulen importiert werden kann.
+Als Typ für den Parameter der Methode *add* nehmen wir wie zuvor spezifiziert *string*.
+Folglich wird im Gegensatz zu Javascript bei Verwendung eines falschen Datentyps ein Fehler in der IDE angezeigt.
+Neben *string* gibt es noch einige weitere Basisdatentypen.
+Der Rückgabewert "1" ist zunächst ausreichend um unseren Test erfolgreich durchlaufen zu lassen.
+ 
+
 
 
 TODO:
@@ -240,11 +244,7 @@ Bei Java-Programmierern hat sich Mockito etabliert, wohingegen in der Javascript
 [tsc]: <https://www.typescriptlang.org/index.html#download-links>
 [Transpiler]: <https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them>
 [String Calculator]: <http://osherove.com/tdd-kata-1/>
-
-```typescript
-let s = "Typescript syntax highlighting";
-```
-
+[Basisdatentypen]: <https://www.typescriptlang.org/docs/handbook/basic-types.html>
 
  
  
