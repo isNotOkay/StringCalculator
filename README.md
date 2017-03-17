@@ -101,6 +101,14 @@ Diese Methode funktioniert unabhängig von der verwendeten IDE.
 ### User Story
 Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder Änderung in Javascript umgewandelt wird, ist es an der Zeit, die umzusetzende Anforderung bzw. User Story vorzustellen.
 
+
+![Alt text](images/readme/uml_diagramm_1.png?raw=true "Title")
+
+![Alt text](images/readme/uml_diagramm_2.png?raw=true "Title")
+
+![Alt text](images/readme/uml_diagramm_3.png?raw=true "Title")
+
+
 ### Implementierung
 
 ### Testing
