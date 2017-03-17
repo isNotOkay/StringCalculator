@@ -166,7 +166,7 @@ Typescript-Klassen haben, wie in Java auch, einen Default-Constructor der nicht 
 Das Schlüsselwort *export* ist zwingend notwendig damit *StringCalculator* von anderen Modulen importiert werden kann.
 Als Typ für den Parameter der Methode *add* nehmen wir wie zuvor spezifiziert *string*.
 Folglich wird im Gegensatz zu Javascript bei Verwendung eines falschen Datentyps ein Fehler in der IDE angezeigt.
-Neben *string* gibt es noch einige weitere Basisdatentypen.
+Neben *string* gibt es noch einige weitere [Basisdatentypen].
 Der Rückgabewert "1" ist zunächst ausreichend um unseren Test erfolgreich durchlaufen zu lassen.
  
 
