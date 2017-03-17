@@ -103,6 +103,25 @@ Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder
 
 ### Implementierung
 
+### Testing
+
+Mit Unit-Tests testen wir ob unser eigener Code korrekt ist. 
+Die Prüfung auf Korrektheit kann nur gewährleistet werden wenn der Code **isoliert** getestet wird.
+Das heißt es müssen alle externen Klassen und Objekte, die mit der SUT kommunizieren, durch *Test-Attrapen* ersetzt werden.
+Somit kann ausgeschlossen werden, dass unsere Tests durch Seiteneffekte externer Module negativ beeinflusst werden.  
+
+Den zu testenden Code nennt man auch *SUT* (= *System under Test*). 
+In der folgenden Tabelle sind die vier verschiedenen Arten von Test-Attrappen und deren Interaktionen mit der SUT aufgelistet:
+
+| Test-Attrappe | Alias | Beschreibung |
+| ------ | ------ | ------|
+| dummy object | dummy | muss lediglich vorhanden sein um compile-time Fehler zu vermeiden, ansonsten keine Funktion
+| test stub | stub | dient als indirekter Input für die SUT
+| test spy | spy | dient zur Verifizierung ob die SUT spezifische Methoden einer Klasse bzw. eines Objekts aufgerufen hat ("indirekte Outputs") 
+| mock object | mock | verhält sich analog zum spy
+
+TODO: Quellenangabe zu practical Unit Testing von Tomet Kaczanowski
+
 ### Fazit
 
 #### Finales Projekt auschecken und ausführen
