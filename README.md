@@ -125,8 +125,37 @@ calculator.add("1,2,3,4,5"); // => returns 15
 Wir haben also ein Objekt *calculator* mit einer Methode *add*, die einen String aus komma-sepparierten Zahlen entgegennimmt, alle Zahlen aufaddiert und zurückliefert.
 
 
-- Test zuerst
-- Klasse erstellen (code beispiel)
+
+```typescript
+import { expect } from 'chai';
+import { StringCalculator } from '../src/StringCalculator';
+
+describe('StringCalculator', function () {
+    let calculator;
+
+    before(function () {
+        calculator = new StringCalculator();
+    });
+
+    it('soll bei eingabe "1" das ergebnis 1 zurückgeben', function () {
+        let result = calculator.add('1');
+        expect(result).to.equal(1);
+    });
+});
+```
+
+```typescript
+export class StringCalculator {
+
+    add(stringOfNumbers: string) {
+        return 1;
+    }
+
+}
+```
+
+
+
 - Refactoring => String Parser (single responsibility, widerverwendbarkeit, Wartbarkeit)
 
 TODO:
