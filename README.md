@@ -107,7 +107,7 @@ Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder
 
 Mit Unit-Tests testen wir ob unser eigener Code korrekt ist. 
 Die Prüfung auf Korrektheit kann nur gewährleistet werden wenn der Code **isoliert** getestet wird.
-Das heißt es müssen alle externen Klassen und Objekte, die mit der SUT kommunizieren, durch *Test-Attrapen* ersetzt werden.
+Das heißt es müssen alle externen Klassen und Objekte, die mit unserem Code kommunizieren, durch *Test-Attrapen* ersetzt werden.
 Somit kann ausgeschlossen werden, dass unsere Tests durch Seiteneffekte externer Module negativ beeinflusst werden.  
 
 Den zu testenden Code nennt man auch *SUT* (= *System under Test*). 
