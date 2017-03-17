@@ -121,11 +121,9 @@ In der folgenden Tabelle sind die vier verschiedenen Arten von Test-Attrappen un
 | mock object | mock | verhält sich analog zum spy
 
 In der Praxis gibt es diverse Frameworks die den Umgang mit Test-Attrapen erheblich vereinfachen.
-Bei Java-Programmierern hat sich Mockito etabliert, wohingegen in der Javascript-Community großteils Sinon.js oder Jasmine eingesetzt wird.
+Bei Java-Programmierern hat sich Mockito etabliert, wohingegen in der Javascript-Community großteils Sinon.js oder Jasmine eingesetzt wird. Die Syntax zur Erstellung von Test-Attrapen ist bei Mockito und Sinon.JS nahezu identisch wie folgende Tabelle zeigt:
 
-Die Syntax zur Erstellung von Test-Attrapen ist in Java und Javascript nahezu identisch wie folgende Tabelle zeigt:
-
-| Java | Sinon.js | 
+| Mockito | Sinon.js | 
 | ------ | ------ |
 | Mockito.when(User.getName()).thenReturn("Alex"); | sinon.stub(user, 'getName').returns('Alex') |
 | Mockito.spy(new User()); |  sinon.spy(user)|
