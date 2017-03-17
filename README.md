@@ -97,11 +97,13 @@ $ tsc --watch
 Diese Methode funktioniert unabhängig von der verwendeten IDE. 
 
 
+### Implementierung
 
-### User Story
-Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder Änderung in Javascript umgewandelt wird, ist es an der Zeit, die umzusetzende Anforderung bzw. User Story vorzustellen.
+Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder Änderung in Javascript umgewandelt wird, ist es an der Zeit, die umzusetzende Anforderung bzw. User Story vorzustellen:
 
-
+> User Story:
+>
+> "Als nutzer eines *Taschenrechners* möchte ich *beliebig viele Zahlen* in Form einer *Zeichenkette* addieren können."
 
 ```typescript
 Calculator.add("1,2,3,4,5"); // => returns 15
@@ -109,14 +111,45 @@ Calculator.add("1,2,3,4,5"); // => returns 15
 
 ![Alt text](images/readme/uml_diagramm_1.png?raw=true "Title")
 
+TODO:
+- User Story vorstellen
+- Test zuerst
+- Klasse erstellen (code beispiel)
+- Refactoring => String Parser (single responsibility, widerverwendbarkeit, Wartbarkeit)
+
+TODO:
+- User Story vorstellen
+- Test 
+- List stub/mock
+- Gedankengang mit Vergleich zu Umsetzung in Java/Typesript (später in Tabelle unten)
+=> spread operator vs. for-schleife
+- Refactoring
+
 ![Alt text](images/readme/uml_diagramm_2.png?raw=true "Title")
+ 
+ TODO:
+- User Story vorstellen
+- Test 
+- List stub/mock/dummy/spy
+- Parser erweitern, reguläre ausdrücke
+- Refactoring
+- UML-Diagramm
+
+TODO:
+- User Story vorstellen
+- Test 
+- List stub/mock/dummy/spy
+- typescript interfaces
+- Refactoring
 
 ![Alt text](images/readme/uml_diagramm_3.png?raw=true "Title")
 
 
-### Implementierung
+### Fazit
 
-### Testing
+TODO
+
+###  Überblick
 
 Mit Unit-Tests testen wir ob unser eigener Code korrekt ist. 
 Die Prüfung auf Korrektheit kann nur gewährleistet werden wenn der Code **isoliert** getestet wird.
@@ -141,12 +174,6 @@ Bei Java-Programmierern hat sich Mockito etabliert, wohingegen in der Javascript
 | Mockito.when(User.getName()).thenReturn("Alex"); | sinon.stub(user, 'getName').returns('Alex') |
 | Mockito.spy(new User()); |  sinon.spy(user)|
 | Mockito.mock(User.class); |  sinon.mock(user)|
-
-
-
-
-
-### Fazit
 
 #### Finales Projekt auschecken und ausführen
 
