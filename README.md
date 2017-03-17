@@ -102,6 +102,11 @@ Diese Methode funktioniert unabhängig von der verwendeten IDE.
 Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder Änderung in Javascript umgewandelt wird, ist es an der Zeit, die umzusetzende Anforderung bzw. User Story vorzustellen.
 
 
+
+```typescript
+Calculator.add("1,2,3,4,5"); // => returns 15
+```
+
 ![Alt text](images/readme/uml_diagramm_1.png?raw=true "Title")
 
 ![Alt text](images/readme/uml_diagramm_2.png?raw=true "Title")
