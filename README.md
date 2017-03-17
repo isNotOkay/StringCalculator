@@ -99,20 +99,21 @@ Diese Methode funktioniert unabhängig von der verwendeten IDE.
 
 ### Implementierung
 
-Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder Änderung in Javascript umgewandelt wird, ist es an der Zeit, die umzusetzende Anforderung bzw. User Story vorzustellen:
+Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder Änderung in Javascript umgewandelt wird, ist es an der Zeit, die erste User Story vorzustellen:
 
 > User Story:
 >
-> "Als nutzer eines *Taschenrechners* möchte ich *beliebig viele Zahlen* in Form einer *Zeichenkette* addieren können."
+> "Als Nutzer eines *Taschenrechners* möchte ich *beliebig viele Zahlen* in Form einer *Zeichenkette* addieren können."
+
+In Code ausgedrückt:
 
 ```typescript
-Calculator.add("1,2,3,4,5"); // => returns 15
+calculator.add("1,2,3,4,5"); // => returns 15
 ```
 
-![Alt text](images/readme/uml_diagramm_1.png?raw=true "Title")
+Wir haben also ein Objekt *calculator* mit einer Methode *add*, die einen String aus komma-sepparierten Zahlen entgegennimmt, alle Zahlen aufaddiert und zurückliefert.
 
-TODO:
-- User Story vorstellen
+
 - Test zuerst
 - Klasse erstellen (code beispiel)
 - Refactoring => String Parser (single responsibility, widerverwendbarkeit, Wartbarkeit)
