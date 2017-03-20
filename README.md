@@ -207,6 +207,81 @@ Jetzt läuft der Testfall durch:
 
 
 
+Gemäß der User Story soll der Taschenrechner beliebig viele Zahlen addieren können. 
+Wir fügen unserer Test Suite einen weiteren Test hinzu, der die Addition von Zeichenketten mit zwei Zahlen prüft:
+
+```typescript
+describe('StringCalculator', () => {
+    let calculator;
+
+    before(function () {
+        calculator = new StringCalculator();
+    });
+
+    it('soll bei eingabe "1" das ergebnis 1 zurückgeben', () => {
+        let result = calculator.add('1');
+        expect(result).to.equal(1);
+    });
+
+    it('soll bei eingabe "1,2" das ergebnis 3 zurückgeben', () => {
+        let result = calculator.add('1,2');
+        expect(result).to.equal(3);
+    }); 
+});
+```
+
+Der neue Test Case schlägt zunächst fehl, weil immer eine 1 zurückgeliefert wird:
+
+![Alt text](images/readme/failing_test_case_2.png?raw=true "Title")
+
+Das Verhalten der *add*-Methode muss angepasst werden, um die Addition zweier zahlen zu ermöglichen. 
+Eine Implementierung könnte wie folgt aussehen:
+
+```typescript
+export class StringCalculator {
+    add(stringOfNumbers: string) {
+        let numbers = stringOfNumbers.split(',');
+        let number1: number = parseInt(numbers[0]);
+        let number2: number = parseInt(numbers[1]);
+
+        if (number2) 
+            return number1 + number2;
+            
+        return number1;
+    }
+}
+```
+
+Die *split*-Methode erstellt anhand des übergenen Trennzeichens (hier: Komma) ein Array aus Substrings:
+
+```typescript
+['1,2'].split(',') // [1,2]
+```
+
+Die Substrings werden per *parseInt* in Zahlen umgewandelt und zurückgeliefert. 
+Da *number* als Datentyp angegeben ist, kreidet uns die IDE sofort einen Fehler an wenn wir die explizite Umwandlung auslassen.
+Falls die übergebene Zeichenkette aus zwei Zahlen besteht wird eine Addition durchgeführt. 
+Ansonsten wird die erste und einzige Zahl unverändert zurückgegeben. Beide Tests sind wieder grün:
+
+![Alt text](images/readme/test_success_3.png?raw=true "Title")
+
+Unsere Tests bestätigen uns, dass der Code korrekt funktioniert, jedoch ist er nicht sonderlich kompakt und verletzt das Single-Responsibility-Prinzip.
+Die *add*-Methode des Taschenrechners führt sowohl das *Parsen* des Eingabeparameters als auch die eigentliche *Kalkulation* durch. 
+Sie besitzt also zwei Verantwortlichkeiten die im Rahmen der Refatcoring-Phase voneinander getrennt werden sollten.
+
+Diesbezüglich lagern wir das Parsen in eine externe Klasse namens *StringParser* aus und nutzen diesen in unser Taschenrechner-Klasse:
+Das Klassendiagramm sieht nun folgendermaßen aus:
+
+
+![Alt text](images/readme/uml_diagramm_2.png?raw=true "Title")
+
+
+
+
+
+
+
+
 
 
 TODO:
@@ -219,7 +294,7 @@ TODO:
 - Refactoring => String Parser (single responsibility, widerverwendbarkeit, Wartbarkeit)
 - 
 
-![Alt text](images/readme/uml_diagramm_2.png?raw=true "Title")
+
  
  TODO:
 - User Story vorstellen
@@ -284,6 +359,7 @@ Bei Java-Programmierern hat sich Mockito etabliert, wohingegen in der Javascript
 [Basisdatentypen]: <https://www.typescriptlang.org/docs/handbook/basic-types.html>
 [arrow functions]: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions>
 [1]: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen#Keine_Bindung_von_this>
+[Single-Responsibility-Prinzip]: 
  
  
  
