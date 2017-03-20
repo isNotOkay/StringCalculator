@@ -343,7 +343,8 @@ Wir fügen einen Test-Case mit einer Zeichenkette der Länge 3 hinzu...
 
 ![Alt text](images/readme/failing_test_case_laenge_3.png?raw=true "Title")
 
-TODO: 
+TODO:  
+- TDD implementierung für beliebige länge
 - string der länge 0
 
 
@@ -395,7 +396,6 @@ TODO (nicht mehr schritt für schritt, grob weitere Konzepte):
 - abstrakte klasse
 
 
-
 ###  Zusammenfassung und Weiterführendes
 
 Mit Unit-Tests testen wir ob unser eigener Code korrekt ist. 
@@ -422,7 +422,14 @@ Bei Java-Programmierern hat sich Mockito etabliert, wohingegen in der Javascript
 | Mockito.spy(new User()); |  sinon.spy(user)|
 | Mockito.mock(User.class); |  sinon.mock(user)|
 
+### Java/Typeskript Cheat-Sheet
+
+TODO:
+- siehe: https://cyrilletuzi.github.io/javascript-guides/java-to-typescript.html
+
 #### Finales Projekt auschecken und ausführen
+
+TODO
 
 [npm]: <https://www.npmjs.com/>
 [nodeJS]: <https://nodejs.org/en/>
