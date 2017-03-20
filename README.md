@@ -123,24 +123,15 @@ calculator.add("1,2,3,4,5"); // => returns 15
 ```
 
 Wir haben also ein Objekt *calculator* mit einer Methode *add*, die einen String aus komma-sepparierten Zahlen entgegennimmt, alle Zahlen aufaddiert und zurückliefert.
-
-
-TODO: Beschreibung der einzelnen Komponente mit Vergleich zu Java, Javascript
-- imports, assertion library
-- arrow functions
-- Test Suite ("describe")
-- Test Case ("it")
-- before block, initialisieren (analog zu java)
-- let (block scope)
+Der erste Test besteht darin, bei Übergabe eines Strings mit nur einer Zahl, eben nur diese Zahl zurückzugeben:
 
 ```typescript
 import { expect } from 'chai';
-import { StringCalculator } from '../src/StringCalculator';
 
 describe('StringCalculator', () => {
     let calculator;
 
-    before(function () {
+    before(() =>  {
         calculator = new StringCalculator();
     });
 
@@ -150,6 +141,26 @@ describe('StringCalculator', () => {
     });
 });
 ```
+
+Zunächst importieren wir die Eigenschaft *expect* des Moduls *chai* mittels standardmäßiger ES6-Syntax. 
+Da sich *chai* innerhalb des Ordners *node_modules* befindet, ist es ausreichend lediglich den Modulnamen anzugeben.
+
+Per *describe*-Block definieren wir eine Test-Suite namens "StringCalculator", die als zweiten Parameter eine Funktion erwartet.
+Innerhalb der übergebenen Funktion werden die eigentlichen Test-Cases in Form von von *it*-Blöcken definiert.
+Aufgrund der kompakteren Schreibweise verwenden wir zur Deklaration der anonymen Funktionen sogenannte *arrow functions* ("=>").
+
+> Hinweis:
+> 
+> Innerhalb von *arrow functions* ändert sich die Semantik von "this"! [[1]]
+
+
+Wie bei Test-Frameworks üblich existieren before- und after-Blöcke zum initialisieren/zurücksetzen testspezifischer Vorbedingungen.
+Wir nutzen den *before*-Block zur Instanziierung eines Taschenrechners, unserer *SUT*. 
+Im Testfall selbst prüfen wir mit *chai*, dass die zukünftige *add*-Methode das gewünschtes Ergebnis zurückliefert.
+Das Schlüsselwort *let* deklariert den Gültigkeitsbereich der Variablen *calculator* und *result* als *block*, äquivalent zum Block-Scope von klassischen Programmiersprachen.
+
+
+
 
 
 Hieraus resultiert folgende Klasse:
@@ -163,12 +174,20 @@ export class StringCalculator {
 ```
 
 Typescript-Klassen haben, wie in Java auch, einen Default-Constructor der nicht explizit angegeben werden muss.
-Das Schlüsselwort *export* ist zwingend notwendig damit *StringCalculator* von anderen Modulen importiert werden kann.
+Das Schlüsselwort *export* ist zwingend notwendig damit *StringCalculator* von externen Modulen importiert werden kann.
 Als Typ für den Parameter der Methode *add* nehmen wir wie zuvor spezifiziert *string*.
-Folglich wird im Gegensatz zu Javascript bei Verwendung eines falschen Datentyps ein Fehler in der IDE angezeigt.
+Anders als bei Javascript wird bei Verwendung eines falschen Datentyps ein Fehler in der IDE angezeigt.
 Neben *string* gibt es noch einige weitere [Basisdatentypen].
 Der Rückgabewert "1" ist zunächst ausreichend um unseren Test erfolgreich durchlaufen zu lassen.
  
+ 
+
+Zum Schluss fügen wir noch ein Import-Statement in unserer *string-calculator.spec.js* ein. 
+Weil es sich beim *StringCalculator* um eine eigens angelegte Klasse handelt müssen wir einen *relativen* Pfad angeben:
+ 
+```typescript
+import { StringCalculator } from '../src/StringCalculator';
+```
 
 
 
@@ -245,7 +264,8 @@ Bei Java-Programmierern hat sich Mockito etabliert, wohingegen in der Javascript
 [Transpiler]: <https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them>
 [String Calculator]: <http://osherove.com/tdd-kata-1/>
 [Basisdatentypen]: <https://www.typescriptlang.org/docs/handbook/basic-types.html>
-
+[arrow functions]: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions>
+[1]: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen#Keine_Bindung_von_this>
  
  
  
