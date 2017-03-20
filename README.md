@@ -343,51 +343,60 @@ Wir fügen einen Test-Case mit einer Zeichenkette der Länge 3 hinzu...
 
 ![Alt text](images/readme/failing_test_case_laenge_3.png?raw=true "Title")
 
+TODO: 
+- string der länge 0
 
 
+### Erweiterung des Klassenmodells
+
+Nehmen wir an, es existiert folgende User Story:
+
+> User Story:
+>
+> "Als Nutzer eines *Taschenrechners* möchte ich Zahlen in Form eines *Json-Strings* addieren können."
+
+Dann könnte der Nutzer beispielsweise folgenden Json-String übergeben und als Resultat die Summe der Werte *x1*, *x2* und *x3* erhalten:
+
+```json
+{
+  "numbers": [
+      "x1": 8,
+      "x2": 11,
+      "x3": 14
+   ]
+ }
+=> result: 33
+```
+
+Neben Klassen bietet Typescript ein weiteres, aus klassischen Programmiersprachen bekanntes Strukturierungselement an: **Interfaces**.
+
+Beide Parser hätten die gleiche Schnittstelle *parse* und würden sich lediglich in der Implementierung unterscheiden.
+Sie wären also vom gleichen *Typ* und überall dort, wo ein *StringParser* verlangt wird, könnte auch ein *JsonParser* verwendet werden:
 
 
+![Alt text](images/readme/uml_diagramm_mit_json_parser.png?raw=true "Title")
 
+Wer Java-Interfaces kennt sollte sich mit der Syntax zur Erstellung von Interfaces in Typeskript problemlos anfreunden können:
 
-
-
-
-
-
+```typescript
+interface Parser {
+    parse(numberOfStrings: string): string[]
+}
+```
 
 TODO:
-- List stub/mock
-- Gedankengang mit Vergleich zu Umsetzung in Java/Typesript (später in Tabelle unten)
-=> spread operator vs. for-schleife
-- Refactoring
-- Refactoring => String Parser (single responsibility, widerverwendbarkeit, Wartbarkeit)
-- 
+Unterschiede von Interfaces in Java und Typescript
 
 
- 
- TODO:
-- User Story vorstellen
-- Test 
-- List stub/mock/dummy/spy
-- Parser erweitern, reguläre ausdrücke
-- Refactoring
-- UML-Diagramm
-
-TODO:
-- User Story vorstellen
-- Test 
-- List stub/mock/dummy/spy
-- typescript interfaces
-- Refactoring
-
-![Alt text](images/readme/uml_diagramm_3.png?raw=true "Title")
 
 
-### Fazit
+TODO (nicht mehr schritt für schritt, grob weitere Konzepte):
+- custom type
+- abstrakte klasse
 
-TODO
 
-###  Überblick
+
+###  Zusammenfassung und Weiterführendes
 
 Mit Unit-Tests testen wir ob unser eigener Code korrekt ist. 
 Die Prüfung auf Korrektheit kann nur gewährleistet werden wenn der Code **isoliert** getestet wird.
