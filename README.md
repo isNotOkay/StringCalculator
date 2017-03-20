@@ -114,7 +114,7 @@ Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder
 
 > User Story:
 >
-> "Als Nutzer eines *Taschenrechners* möchte ich *beliebig viele Zahlen* in Form einer *Zeichenkette* addieren können."
+> "Als Nutzer eines *Taschenrechners* möchte ich *beliebig viele Zahlen* in Form einer *Zeichenkette* addieren."
 
 In Code ausgedrückt:
 
@@ -349,11 +349,11 @@ TODO:
 
 ### Erweiterung des Klassenmodells
 
-Nehmen wir an, es existiert folgende User Story:
+Nehmen wir an es existiert folgende User Story:
 
 > User Story:
 >
-> "Als Nutzer eines *Taschenrechners* möchte ich Zahlen in Form eines *Json-Strings* addieren können."
+> "Als Nutzer eines *Taschenrechners* möchte ich Zahlen in Form eines *Json-Strings* addieren"
 
 Dann könnte der Nutzer beispielsweise folgenden Json-String übergeben und als Resultat die Summe der Werte *x1*, *x2* und *x3* erhalten:
 
@@ -368,14 +368,14 @@ Dann könnte der Nutzer beispielsweise folgenden Json-String übergeben und als 
 ```
 => result: 33
 
-Neben Klassen bietet Typescript ein weiteres, aus klassischen Programmiersprachen bekanntes Strukturierungselement an: **Interfaces**.
-
+Wir bräuchten also einen weiteren Parser, der den Json-String in ein Array aus Zahlen umwandelt.
 Beide Parser hätten die gleiche Schnittstelle *parse* und würden sich lediglich in der Implementierung unterscheiden.
 Sie wären also vom gleichen *Typ* und überall dort, wo ein *StringParser* verlangt wird, könnte auch ein *JsonParser* verwendet werden:
 
 
 ![Alt text](images/readme/uml_diagramm_mit_json_parser.png?raw=true "Title")
 
+Neben Klassen bietet Typescript ein weiteres, aus klassischen Programmiersprachen bekanntes Strukturierungselement an: **Interfaces**.
 Wer Java-Interfaces kennt sollte sich mit der Syntax zur Erstellung von Interfaces in Typeskript problemlos anfreunden können:
 
 ```typescript
