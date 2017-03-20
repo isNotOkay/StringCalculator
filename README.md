@@ -265,7 +265,7 @@ Ansonsten wird die erste und einzige Zahl unverändert zurückgegeben. Beide Tes
 
 ![Alt text](images/readme/test_success_3.png?raw=true "Title")
 
-Unsere Tests bestätigen uns, dass der Code korrekt funktioniert, jedoch ist er nicht sonderlich kompakt und verletzt das Single-Responsibility-Prinzip.
+Unsere Tests bestätigen uns, dass der Code korrekt funktioniert, verletzt das Single-Responsibility-Prinzip.
 Die *add*-Methode des Taschenrechners führt sowohl das *Parsen* des Eingabeparameters als auch die eigentliche *Kalkulation* durch. 
 Sie besitzt also zwei Verantwortlichkeiten die im Rahmen der Refatcoring-Phase voneinander getrennt werden sollten.
 
@@ -288,13 +288,8 @@ Die *package.json* sollte *sinon* und die zugehörige Typdefinition *@types/sino
 
 ![Alt text](images/readme/sinon_typdefinition_package_json.png?raw=true "Title")
 
-Wir importieren sinon in *string-calculator.spec.ts* und können anschließend mit dem Refactoring beginnen:
+Wir importieren sinon in *string-calculator.spec.ts* und führen das Refactoring durch:
 
-```typescript
-import * as sinon from 'sinon';
-```
-
-Nach dem Refatcoring hat *string-calculator.spec.ts* folgende Struktur:
 
 ```typescript
 import { expect } from 'chai';
@@ -331,6 +326,22 @@ Das Objekt *stringParser* verfügt nun über weitere sinon-spezifische Methoden 
 Das eigentliche stubbing der *parse*-Methode geschieht in den Test Cases, wo die Implementierung jeweils durch einen simplen Rückgabewert ausgetauscht wird.
 Ob ein Test erfolgreich ist oder fehlschlägt ist jetzt allein davon abhängig ob der Code des Taschenrechners korrekt ist.
 Eine möglicherweise fehlerhafte Implementierung des Parsers hat aufgrund des Stubbings keine Auswirkungen mehr auf den Erfolg eines Tests.
+
+Bisher haben wir sichergestellt, dass der Taschenrechner Zeichenketten mit einer Länge von 1 und 2 addieren kann. 
+Wie sieht es jedoch mit einer beliebigen Länge aus?
+Wir fügen einen Test-Case mit einer Zeichenkette der Länge 3 hinzu... 
+
+```typescript
+  it('soll bei eingabe "1,2,3" das ergebnis 6 zurückgeben', () => {
+        stringParser.parse = () => { return [1, 2, 3] }; // parse-Methode austauschen
+        let result = calculator.add('1,2,3');
+        expect(result).to.equal(6);
+    });
+ ```   
+
+...und bemerken, dass wir die Logik der *add*-Methode überarbeiten müssen:
+
+![Alt text](images/readme/failing_test_case_laenge_3.png?raw=true "Title")
 
 
 
