@@ -160,34 +160,52 @@ Im Testfall selbst prüfen wir mit *chai*, dass die zukünftige *add*-Methode da
 Das Schlüsselwort *let* deklariert den Gültigkeitsbereich der Variablen *calculator* und *result* als *block*, äquivalent zum Block-Scope von klassischen Programmiersprachen.
 
 
-
-
-
-Hieraus resultiert folgende Klasse:
+Der Test ist fertig, fehlt noch die Implementierung des Taschenrechners:
 
 ```typescript
 export class StringCalculator {
     add(stringOfNumbers: string) {
-        return 1;
     }
 }
 ```
 
 Typescript-Klassen haben, wie in Java auch, einen Default-Constructor der nicht explizit angegeben werden muss.
-Das Schlüsselwort *export* ist zwingend notwendig damit *StringCalculator* von externen Modulen importiert werden kann.
+Das Schlüsselwort *export* ist zwingend notwendig, damit *StringCalculator* von externen Modulen importiert werden kann.
 Als Typ für den Parameter der Methode *add* nehmen wir wie zuvor spezifiziert *string*.
 Anders als bei Javascript wird bei Verwendung eines falschen Datentyps ein Fehler in der IDE angezeigt.
 Neben *string* gibt es noch einige weitere [Basisdatentypen].
-Der Rückgabewert "1" ist zunächst ausreichend um unseren Test erfolgreich durchlaufen zu lassen.
- 
- 
-
 Zum Schluss fügen wir noch ein Import-Statement in unserer *string-calculator.spec.js* ein. 
 Weil es sich beim *StringCalculator* um eine eigens angelegte Klasse handelt müssen wir einen *relativen* Pfad angeben:
  
 ```typescript
 import { StringCalculator } from '../src/StringCalculator';
 ```
+
+Wir führen den Test aus und gucken was passiert:
+
+```sh
+$ mocha
+```
+
+
+![Alt text](images/readme/failed_testcase_1.png?raw=true "Title")
+
+Der Test schlägt wie zu erwarten fehl.
+Wir liefern eine 1 zurück und führen den Test erneut aus: 
+
+```typescript
+export class StringCalculator {
+    add(stringOfNumbers: string) {
+      return 1;
+    }
+}
+```
+
+Jetzt läuft der Testfall durch:
+
+![Alt text](images/readme/passed_test_case_1.png?raw=true "Title")
+
+
 
 
 
