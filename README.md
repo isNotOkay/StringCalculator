@@ -360,13 +360,13 @@ Dann könnte der Nutzer beispielsweise folgenden Json-String übergeben und als 
 ```json
 {
   "numbers": [
-      "x1": 8,
-      "x2": 11,
-      "x3": 14
+      {"x1": 8},
+      {"x2": 11},
+      {"x3": 14}
    ]
  }
-=> result: 33
 ```
+=> result: 33
 
 Neben Klassen bietet Typescript ein weiteres, aus klassischen Programmiersprachen bekanntes Strukturierungselement an: **Interfaces**.
 
