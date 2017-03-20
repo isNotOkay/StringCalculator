@@ -275,6 +275,66 @@ Das Klassendiagramm sieht nun folgendermaßen aus:
 
 ![Alt text](images/readme/uml_diagramm_2.png?raw=true "Title")
 
+Damit die Logik unserer Unit-Tests für den Taschenrechner nicht von Seiteneffekten des Parsers negativ beeinflusst wird, müssen wir auf eine Testattrappe zurückgreifen.
+Das heißt wir *faken* den Aufruf der *parse*-Methode anstatt die echte, mit potenziellen Fehlern behaftete Implementierung, zu verwenden.
+Wir passen unsere Tests an die neuen Gegebenheiten an und *mocken* den Taschenrechner mit Hilfe von Sinon.js:
+
+```sh
+$ npm install --save-dev sinon
+$ npm install --save-dev @types/sinon
+```
+
+Die *package.json* sollte *sinon* und die zugehörige Typdefinition *@types/sinon* als weitere Abhängigkeiten auflisten:
+
+![Alt text](images/readme/sinon_typdefinition_package_json.png?raw=true "Title")
+
+Wir importieren sinon in *string-calculator.spec.ts* und können anschließend mit dem Refactoring beginnen:
+
+```typescript
+import * as sinon from 'sinon';
+```
+
+Nach dem Refatcoring hat *string-calculator.spec.ts* folgende Struktur:
+
+```typescript
+import { expect } from 'chai';
+import * as sinon from 'sinon';
+import { StringCalculator } from '../src/StringCalculator';
+import { StringParser } from '../src/StringParser';
+
+describe('StringCalculator', () => {
+    let calculator: any;
+    let stringParser: any;
+
+    before(function () {
+        stringParser = new StringParser();
+        stringParser = sinon.stub(stringParser); // parser in stub-objekt "wrappen"
+        calculator = new StringCalculator(stringParser);
+    });
+
+    it('soll bei eingabe "1" das ergebnis 1 zurückgeben', () => {
+        stringParser.parse = () => { return [1] }; // parse-Methode austauschen
+        let result = calculator.add('1');
+        expect(result).to.equal(1);
+    });
+
+    it('soll bei eingabe "1,2" das ergebnis 3 zurückgeben', () => {
+        stringParser.parse = () => { return [1, 2] }; // parse-Methode austauschen
+        let result = calculator.add('1,2');
+        expect(result).to.equal(3);
+    });
+});
+```
+
+Die Instanz des StringParsers wird im before-Block per sinon *gewrapped*. 
+Das Objekt *stringParser* verfügt nun über weitere sinon-spezifische Methoden und Eigenschaften, welches wir als neuen Konstruktor-Parameter an den Taschenrechner übergeben.
+Das eigentliche stubbing der *parse*-Methode geschieht in den Test Cases, wo die Implementierung jeweils durch einen simplen Rückgabewert ausgetauscht wird.
+Ob ein Test erfolgreich ist oder fehlschlägt ist jetzt allein davon abhängig ob der Code des Taschenrechners korrekt ist.
+Eine möglicherweise fehlerhafte Implementierung des Parsers hat aufgrund des Stubbings keine Auswirkungen mehr auf den Erfolg eines Tests.
+
+
+
+
 
 
 
@@ -285,8 +345,6 @@ Das Klassendiagramm sieht nun folgendermaßen aus:
 
 
 TODO:
-- User Story vorstellen
-- Test 
 - List stub/mock
 - Gedankengang mit Vergleich zu Umsetzung in Java/Typesript (später in Tabelle unten)
 => spread operator vs. for-schleife
