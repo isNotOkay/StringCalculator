@@ -1,0 +1,10 @@
+
+.code-block-container {
+  max-width: 600px;
+}
+
+.code-block {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}

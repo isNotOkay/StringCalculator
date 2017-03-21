@@ -94,6 +94,12 @@ Zudem erstellen wir eine Datei namens *tsconfig.json* in der wir spezifizieren w
 }
 ```
 
+> Hinweis:
+>
+> Typdefinitionen sind in Typescript **optional**.
+> Indem wir das Attribut *noImplicitAny* auf *true* setzen, zwingt uns der Transpiler immer einen Typ anzugeben.
+
+
 Damit alle *.ts* nach jeder Änderung erneut transpiliert werden, konfigurieren wir einen Visual Studio spezifischen [Task].
 Alternativ können wir auch das npm-Modul [tsc] global installieren und im *watch*-Modus starten:
 
@@ -424,9 +430,14 @@ Bei Java-Programmierern hat sich Mockito etabliert, wohingegen in der Javascript
 TODO:
 - siehe: https://cyrilletuzi.github.io/javascript-guides/java-to-typescript.html
 
+
+
+
 #### Finales Projekt auschecken und ausführen
 
 TODO
+
+
 
 [npm]: <https://www.npmjs.com/>
 [nodeJS]: <https://nodejs.org/en/>
