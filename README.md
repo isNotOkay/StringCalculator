@@ -113,7 +113,7 @@ Diese Methode funktioniert unabhängig von der verwendeten IDE.
 > Hinweis:
 >
 > Wir sollten sicherstellen, dass immer nur *ein* Transpiler im Hintergrund aktiv ist.
-> *Entweder* der built-in Transpiler der verwendeten IDE *oder* tsc in einem neuen Konsolenfenster. 
+> *Entweder* wir nutzen den eingebetteten Transpiler der verwendeten IDE *oder* starten *tsc* in einem separaten Konsolenfenster. 
 
 
 ### Implementierung
