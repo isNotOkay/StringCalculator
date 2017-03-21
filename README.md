@@ -275,42 +275,55 @@ Die *package.json* sollte *sinon* und die zugehörige Typdefinition *@types/sino
 ![Alt text](images/readme/sinon_typdefinition_package_json.png?raw=true "Title")
 
 Wir importieren sinon in *string-calculator.spec.ts* und führen das Refactoring durch:
-
-
+ 
 ```typescript
-import { expect } from 'chai';
+import {expect} from 'chai';
 import * as sinon from 'sinon';
-import { StringCalculator } from '../src/StringCalculator';
-import { StringParser } from '../src/StringParser';
+import {StringCalculator} from '../src/StringCalculator';
+import {StringParser} from '../src/StringParser';
 
 describe('StringCalculator', () => {
-    let calculator: StringCalculator;
-    let stringParser: StringParser;
+  let calculator: StringCalculator;
+  // Keine Typangabe, da wir stringParser stubben.
+  // Ist danach ein "Hybrid" aus den Typen StringParser und SinonStub)
+  let stringParser: any;
 
-    before(function () {
-        stringParser = sinon.createStubInstance(StringParser); // parser in stub-objekt "wrappen"
-        calculator = new StringCalculator(stringParser);
-    });
+  before(function () {
+    stringParser = new StringParser();
+    calculator = new StringCalculator(stringParser);
 
-    it('soll bei eingabe "1" das ergebnis 1 zurückgeben', () => {
-        stringParser.parse = () => { return [1] }; // parse-Methode austauschen
-        let result = calculator.add('1');
-        expect(result).to.equal(1);
-    });
+    // stringParser stubben und inputs/outputs von "parse" definieren
+    sinon.stub(stringParser, 'parse')
+      .withArgs('1').returns([1])
+      .withArgs('1,2').returns([1, 2])
+      .withArgs('1,2,3').returns([1, 2, 3]);
+  });
 
-    it('soll bei eingabe "1,2" das ergebnis 3 zurückgeben', () => {
-        stringParser.parse = () => { return [1, 2] }; // parse-Methode austauschen
-        let result = calculator.add('1,2');
-        expect(result).to.equal(3);
-    });
+  it('soll bei eingabe "1" das ergebnis 1 zurückgeben', () => {
+    let result = calculator.add('1');
+    expect(stringParser.parse.called).to.equal(true);
+    expect(result).to.equal(1);
+  });
+
+  it('soll bei eingabe "1,2" das ergebnis 3 zurückgeben', () => {
+    let result = calculator.add('1,2');
+    expect(stringParser.parse.called).to.equal(true);
+    expect(result).to.equal(3);
+  });
+
+  afterEach(() => {
+    stringParser.parse.called = false; // Anzahl Aufrufe von "parse" auf 0 setzen
+  });
 });
 ```
 
-Im before-Block wird die Konstruktur-Funktion *StringParser* an die Methode *createStubInstance* übergeben und von sinon in einem stub *gewrapped*.
-Das Objekt *stringParser* verfügt nun über weitere sinon-spezifische Methoden und Eigenschaften, welches wir als neuen Konstruktor-Parameter an den Taschenrechner übergeben.
-Das eigentliche stubbing der *parse*-Methode geschieht in den Test Cases, wo die Implementierung jeweils durch einen simplen Rückgabewert ausgetauscht wird.
-Ob ein Test erfolgreich ist oder fehlschlägt ist jetzt allein davon abhängig ob der Code des Taschenrechners korrekt ist.
-Eine möglicherweise fehlerhafte Implementierung des Parsers hat aufgrund des Stubbings keine Auswirkungen mehr auf den Erfolg eines Tests.
+Im before-Block erstellen wir eine neue Instanz des *StringParsers*, stubben die *parse*-Methode und übergeben das instanziierte Objekt als Argument an den *StringCalculator*.
+Der Konstruktor mit einem Parameter existiert noch nicht und wird nach dem Refactoring des Tests hinzugefügt!
+
+Die gestubbte Methode *parse* des Objekts *stringParser* verfügt nun über weitere sinon-spezifische Methoden und Eigenschaften, wie bspw. "called".
+Mit dieser Eigenschaft können wir **verifizieren** ob *parse* von *add* aufgerufen wurde.  
+Der Erfolg eines Tests ist jetzt allein von der Logik des Taschenrechners abhängig.
+Eine möglicherweise fehlerhafte Implementierung des Parsers hat aufgrund des Stubbings keine Auswirkungen mehr auf die Tests.
 
 Bisher haben wir sichergestellt, dass der Taschenrechner Zeichenketten mit einer Länge von 1 und 2 addieren kann. 
 Wie sieht es jedoch mit einer beliebigen Länge aus?

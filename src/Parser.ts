@@ -1,4 +1,5 @@
 
-export interface Parser {
-    parse(result: number): any;
+
+interface Parser {
+    parse(numberOfStrings: string): string[]
 }

@@ -10,5 +10,9 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/sinon": "^1.16.36",
+    "sinon": "^2.1.0"
+  }
 }
