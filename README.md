@@ -306,7 +306,7 @@ describe('StringCalculator', () => {
 });
 ```
 
-Die Instanz des StringParsers wird im before-Block per sinon *gewrapped*. 
+Im before-Block wird die Konstruktur-Funktion *StringParser* an die Methode *createStubInstance* übergeben und von sinon in einem stub *gewrapped*.
 Das Objekt *stringParser* verfügt nun über weitere sinon-spezifische Methoden und Eigenschaften, welches wir als neuen Konstruktor-Parameter an den Taschenrechner übergeben.
 Das eigentliche stubbing der *parse*-Methode geschieht in den Test Cases, wo die Implementierung jeweils durch einen simplen Rückgabewert ausgetauscht wird.
 Ob ein Test erfolgreich ist oder fehlschlägt ist jetzt allein davon abhängig ob der Code des Taschenrechners korrekt ist.
