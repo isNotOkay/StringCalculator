@@ -61,9 +61,9 @@ $ npm install --save-dev chai
 Zusätzlich müssen wir noch die Typdefinitionen der verwendeten Module installieren damit der Typescript-Transpiler keine Fehler anzeigt:
 
 ```sh
-$ npm install --save-dev node
-$ npm install --save-dev mocha
-$ npm install --save-dev chai
+$ npm install --save-dev @types/node
+$ npm install --save-dev @types/mocha
+$ npm install --save-dev @types/chai
 ```
 
 
