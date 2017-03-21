@@ -310,8 +310,7 @@ describe('StringCalculator', () => {
     let stringParser: StringParser;
 
     before(function () {
-        stringParser = new StringParser();
-        stringParser = sinon.stub(stringParser); // parser in stub-objekt "wrappen"
+        stringParser = sinon.stub(new StringParser()); // parser in stub-objekt "wrappen"
         calculator = new StringCalculator(stringParser);
     });
 
