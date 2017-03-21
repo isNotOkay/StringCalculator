@@ -4,11 +4,8 @@
 ### Paketmanager und externe Module installieren
 
 Zum Verwalten der Abhängigkeiten nutzen wir den Paketmanager [npm], der Bestandteil der populären JavaScript-Laufzeitumgebung [nodeJS] ist und eine riesige Palette an Javascript-Modulen beherbergt. 
-Hierzu laden wir die aktuellste Version herunter ("Latest Features") und tragen den Installationsordner in den Umgebungsvariablen ein:
-
-![Alt text](images/readme/umgebungsvariablen.png?raw=true "Title")
-
-Der Paketmanager lässt sich jetzt direkt von der Kommandozeile aus aufrufen ohne jedes Mal den genauen Pfad angeben zu müssen:
+Hierzu laden wir die aktuellste Version herunter ("Latest Features") und tragen den Installationsordner in den Umgebungsvariablen ein.
+Wir überprüfen ob die Installation erfolgreich war indem wir ein Kommandozeilenfenster öffnen und uns die Version anzeigen lassen:
 
 ```sh
  npm --version
