@@ -46,7 +46,7 @@ Zusätzlich müssen wir noch die Typdefinitionen der verwendeten Module installi
 
 ### Entwicklungsumgebung aufsetzen
 Das Projekt kann im Prinzip mit jedem beliebigen Texteditor bearbeitet werden, jedoch bietet sich eine IDE mit einer guten Autovervollständigung für Typescript an. 
-Ein kostenloser Editor mit herausragender Autovervollständigung ist beispielsweise [Visual Studio Code].
+Ein kostenloser Editor mit guter Autovervollständigung ist beispielsweise [Visual Studio Code].
 Nachdem das Programm heruntergeladen und installiert wurde, lässt sich unser überschaubares Projekt einfach als Ordner öffnen und direkt bearbeiten. 
 Die Projektstruktur sollte folgendermaßen aussehen:
 
