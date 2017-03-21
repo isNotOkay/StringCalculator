@@ -30,7 +30,7 @@ Hierzu laden wir die aktuellste Version herunter ("Latest Features") und tragen 
 Der Paketmanager lässt sich jetzt direkt von der Kommandozeile aus aufrufen ohne jedes Mal den genauen Pfad angeben zu müssen:
 
 ```sh
-$ npm --version
+ npm --version
 ```
 
 > Hinweis: 
@@ -42,7 +42,7 @@ $ npm --version
 Zum initialisieren des Projekts erstellen wir einen neuen Ordner namens "string-calculator". Im neu angelegten Ordner rufen wir folgenden Befehl auf:
 
 ```sh
-$ npm init
+ npm init
 ```
 
 Nachdem wir alle Eingabeaufforderungen bestätigt haben erzeugt der Paketmanager eine Datei namens *package.json*, welche zunächst nur allgemeine Metadaten enthält:
@@ -53,21 +53,18 @@ Mit der jetzt vorhandenen *package.json* können wir externe Pakete herunterlade
 Für dieses Tutorial benötigen wir das Test-Framework [mocha] sowie die Assertion-Bibliothek [chai]:
 
 ```sh
-$ npm install --global mocha
-$ npm install --save-dev mocha
-$ npm install --save-dev chai
+ npm install --global mocha
+ npm install --save-dev mocha
+ npm install --save-dev chai
 ```
 
 Zusätzlich müssen wir noch die Typdefinitionen der verwendeten Module installieren damit der Typescript-Transpiler keine Fehler anzeigt:
 
 ```sh
-$ npm install --save-dev @types/node
-$ npm install --save-dev @types/mocha
-$ npm install --save-dev @types/chai
+ npm install --save-dev @types/node
+ npm install --save-dev @types/mocha
+ npm install --save-dev @types/chai
 ```
-
-
-
 
 #### Entwicklungsumgebung aufsetzen
 Das Projekt kann im Prinzip mit jedem beliebigen Texteditor bearbeitet werden, jedoch bietet sich eine IDE mit einer guten Autovervollständigung für Typescript an. 
@@ -101,8 +98,8 @@ Damit alle *.ts* nach jeder Änderung erneut transpiliert werden, konfigurieren 
 Alternativ können wir auch das npm-Modul [tsc] global installieren und im *watch*-Modus starten:
 
 ```sh
-$ npm install -g typescript
-$ tsc --watch
+ npm install -g typescript
+ tsc --watch
 ```
 
 Diese Methode funktioniert unabhängig von der verwendeten IDE. 
@@ -184,7 +181,7 @@ import { StringCalculator } from '../src/StringCalculator';
 Wir führen den Test aus und gucken was passiert:
 
 ```sh
-$ mocha
+ mocha
 ```
 
 
@@ -280,8 +277,8 @@ Das heißt wir *faken* den Aufruf der *parse*-Methode anstatt die echte, mit pot
 Wir passen unsere Tests an die neuen Gegebenheiten an und *mocken* den Taschenrechner mit Hilfe von Sinon.js:
 
 ```sh
-$ npm install --save-dev sinon
-$ npm install --save-dev @types/sinon
+ npm install --save-dev sinon
+ npm install --save-dev @types/sinon
 ```
 
 Die *package.json* sollte *sinon* und die zugehörige Typdefinition *@types/sinon* als weitere Abhängigkeiten auflisten:
