@@ -1,26 +1,7 @@
 
 
 
-### Vorbereitungen
-
-Im Zuge dieses Tutorials soll mittels TDD ein Taschenrechner für Zeichenketten auf Basis folgender Technologien entwickelt werden:
-
-* [Typescript]
-* [npm]
-* [mocha]
-
-Typescript erweitert Javascript um einige nützliche Features wie Typen, Klassen und Interfaces. 
-Die Syntax ähnelt stark der von klassischen Programmiersprachen, jedoch gibt es bei der Art und Weise wie Typescript die genannten Sprachmerkmale umsetzt wesentliche Unterschiede.
-In der folgenden Tabelle sind die Unterschiede am Beispiel von Java gegenübergestellt:
-
-| Java | Typescript |
-| ------ | ------ |
-| ... | ... |
-| ... | ... |
-| ... | ... |
-
-
-#### Paketmanager und externe Module installieren
+### Paketmanager und externe Module installieren
 
 Zum Verwalten der Abhängigkeiten nutzen wir den Paketmanager [npm], der Bestandteil der populären JavaScript-Laufzeitumgebung [nodeJS] ist und eine riesige Palette an Javascript-Modulen beherbergt. 
 Hierzu laden wir die aktuellste Version herunter ("Latest Features") und tragen den Installationsordner in den Umgebungsvariablen ein:
@@ -66,7 +47,7 @@ Zusätzlich müssen wir noch die Typdefinitionen der verwendeten Module installi
  npm install --save-dev @types/chai
 ```
 
-#### Entwicklungsumgebung aufsetzen
+### Entwicklungsumgebung aufsetzen
 Das Projekt kann im Prinzip mit jedem beliebigen Texteditor bearbeitet werden, jedoch bietet sich eine IDE mit einer guten Autovervollständigung für Typescript an. 
 Ein kostenloser Editor mit herausragender Autovervollständigung ist beispielsweise [Visual Studio Code].
 Nachdem das Programm heruntergeladen und installiert wurde, lässt sich unser überschaubares Projekt einfach als Ordner öffnen und direkt bearbeiten. 
@@ -430,6 +411,16 @@ Bei Java-Programmierern hat sich Mockito etabliert, wohingegen in der Javascript
 | Mockito.mock(User.class); |  sinon.mock(user)|
 
 ### Java/Typeskript Cheat-Sheet
+
+Typescript erweitert Javascript um einige nützliche Features wie Typen, Klassen und Interfaces. 
+Die Syntax ähnelt stark der von klassischen Programmiersprachen, jedoch gibt es bei der Art und Weise wie Typescript die genannten Sprachmerkmale umsetzt wesentliche Unterschiede.
+In der folgenden Tabelle sind die Unterschiede am Beispiel von Java gegenübergestellt:
+
+| Java | Typescript |
+| ------ | ------ |
+| ... | ... |
+| ... | ... |
+| ... | ... |
 
 TODO:
 - siehe: https://cyrilletuzi.github.io/javascript-guides/java-to-typescript.html
