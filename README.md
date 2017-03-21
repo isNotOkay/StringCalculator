@@ -137,7 +137,7 @@ Der erste Test besteht darin, bei Übergabe eines Strings mit nur einer Zahl, eb
 import { expect } from 'chai';
 
 describe('StringCalculator', () => {
-    let calculator;
+    let calculator: StringCalculator;
 
     before(() =>  {
         calculator = new StringCalculator();
@@ -220,7 +220,7 @@ Wir fügen unserer Test Suite einen weiteren Test hinzu, der die Addition von Ze
 
 ```typescript
 describe('StringCalculator', () => {
-    let calculator;
+    let calculator: StringCalculator;
 
     before(function () {
         calculator = new StringCalculator();
@@ -306,8 +306,8 @@ import { StringCalculator } from '../src/StringCalculator';
 import { StringParser } from '../src/StringParser';
 
 describe('StringCalculator', () => {
-    let calculator: any;
-    let stringParser: any;
+    let calculator: StringCalculator;
+    let stringParser: StringParser;
 
     before(function () {
         stringParser = new StringParser();
