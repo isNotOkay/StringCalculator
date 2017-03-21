@@ -101,14 +101,19 @@ Zudem erstellen wir eine Datei namens *tsconfig.json* in der wir spezifizieren w
 
 
 Damit alle *.ts* nach jeder Änderung erneut transpiliert werden, konfigurieren wir einen Visual Studio spezifischen [Task].
-Alternativ können wir auch das npm-Modul [tsc] global installieren und im *watch*-Modus starten:
+Alternativ können wir auch das npm-Modul [tsc] global installieren und im *watch*-Modus starten. Dazu öffnen wir ein neues Konsolenfenster und geben folgende Befehle ein:
 
 ```sh
  npm install -g typescript
  tsc --watch
 ```
 
-Diese Methode funktioniert unabhängig von der verwendeten IDE. 
+Diese Methode funktioniert unabhängig von der verwendeten IDE.   
+
+> Hinweis:
+>
+> Wir sollten sicherstellen, dass immer nur *ein* Transpiler im Hintergrund aktiv ist.
+> *Entweder* der built-in Transpiler der verwendeten IDE *oder* tsc in einem neuen Konsolenfenster. 
 
 
 ### Implementierung
