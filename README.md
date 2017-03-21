@@ -251,7 +251,7 @@ Ansonsten wird die erste und einzige Zahl unverändert zurückgegeben. Beide Tes
 
 ![Alt text](images/readme/test_success_3.png?raw=true "Title")
 
-Unsere Tests bestätigen uns, dass der Code korrekt funktioniert, verletzt das Single-Responsibility-Prinzip.
+Unsere Tests bestätigen uns, dass der Code korrekt funktioniert, jedoch verletzen wir das Single-Responsibility-Prinzip.
 Die *add*-Methode des Taschenrechners führt sowohl das *Parsen* des Eingabeparameters als auch die eigentliche *Kalkulation* durch. 
 Sie besitzt also zwei Verantwortlichkeiten die im Rahmen der Refatcoring-Phase voneinander getrennt werden sollten.
 
