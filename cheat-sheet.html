@@ -27,7 +27,6 @@
     sogenannten <i>block-scope</i>.
     Bei Java ist der Gültigkeitsbreich von lokal definierten Variablen immer block-scope.
 
-
     <div class="code-block">
       <pre><code class="javascript">
 /* Typescript */
@@ -35,6 +34,26 @@ for (let i = 0; i < 10; i++) {
     console.log(i);
 }
 console.log(i); // cannot find name 'i'
+      </code></pre>
+    </div>
+
+    Das Schlüsselwort <i>const</i> ist das äquivalent zu <i>final</i> in Java.
+    Ein mit <i>const</i> bzw. <i>final</i> deklariertes Objekt darf nur <b>einmalig</b> zugewiesen werden.
+    Bei komplexen Objekten ist die Änderung von Eigenschaften weiterhin möglich, das heißt sie sind <b>nicht</b> <i>immutable</i>.
+
+    <div class="code-block">
+      <pre><code class="java">
+/* Java */
+final User user = new User("Max");
+user = someOtherUser; // Fehler
+user.name = "moritz"; // OK
+      </code></pre>
+
+      <pre><code class="javascript">
+/* Typescript */
+const user : User = new User('Max');
+user = someOtherUser; // Fehler
+user.name = 'moritz'; // OK
       </code></pre>
     </div>
 
