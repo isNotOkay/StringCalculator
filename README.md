@@ -308,7 +308,7 @@ Das Klassendiagramm sieht nun folgendermaßen aus:
 
 
 Wir müssen nun auch die **Kommunikation** zwischen Taschenrechner und Parser, einer externen Abhängigkeit, testen.
-Der Parser liefert **indirekte** Inputs an den Taschenrechner und wird daher im englischen auch **DOC** (= dependant upon document) genannt.
+Der Parser liefert **indirekte** Inputs an den Taschenrechner und wird daher im englischen auch **DOC** (= dependent upon document) genannt.
 Unser Testszenario wird entsprechend ergänzt:
 
 TODO: Grafik state + interaction testing + erläuterung
