@@ -305,6 +305,18 @@ Das Klassendiagramm sieht nun folgendermaßen aus:
 
 ![Alt text](images/readme/uml_diagramm_2.png?raw=true "Title")
 
+
+
+Wir müssen nun auch die **Kommunikation** zwischen Taschenrechner und Parser, einer externen Abhängigkeit, testen.
+Der Parser liefert **indirekte** Inputs an den Taschenrechner und wird daher im englischen auch **DOC** (= dependant upon document) genannt.
+Unser Testszenario wird entsprechend mit einem weiteren Komponententyp ergänzt:
+
+TODO: Grafik state + interaction testing + erläuterung
+
+Zuvor haben wir lediglich den *state* des Taschenrechners getestet. Jetzt validieren wir zusätzlich die Kommunikation mit dem Parser.
+
+
+
 Damit die Logik unserer Unit-Tests für den Taschenrechner nicht von Seiteneffekten des Parsers negativ beeinflusst wird, müssen wir auf eine Testattrappe zurückgreifen.
 Das heißt wir *faken* den Aufruf der *parse*-Methode anstatt die echte, mit potenziellen Fehlern behaftete Implementierung, zu verwenden.
 Wir passen unsere Tests an die neuen Gegebenheiten an und *mocken* den Taschenrechner mit Hilfe von Sinon.js:
@@ -366,12 +378,6 @@ Der Konstruktor mit einem Parameter existiert noch nicht und wird nach dem Refac
 
 Die gestubbte Methode *parse* des Objekts *stringParser* verfügt nun über weitere sinon-spezifische Methoden und Eigenschaften, wie bspw. *called*.
 Mit dieser Eigenschaft können wir **verifizieren** ob *parse* von *add* aufgerufen wurde. 
-Wir prüfen also die **Kommunikation** zwischen Taschenrechner (= SUT) und Parser, einer externen Abhängigkeit, die **indirekte** Inputs an unsere SUT liefert. 
-Unser Testszenario wird um eine **DOC** (= dependent upon component) erweitert:
-
-
-TODO: Grafik state + interaction testing + erläuterung
-
 Der Erfolg eines Tests ist jetzt allein von der Logik des Taschenrechners abhängig.
 Eine möglicherweise fehlerhafte Implementierung des Parsers hat aufgrund des Stubbings keine Auswirkungen mehr auf die Tests.
 
