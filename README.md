@@ -364,7 +364,7 @@ describe('StringCalculator', () => {
 Im before-Block erstellen wir eine neue Instanz des *StringParsers*, stubben die *parse*-Methode und übergeben das instanziierte Objekt als Argument an den *StringCalculator*.
 Der Konstruktor mit einem Parameter existiert noch nicht und wird nach dem Refactoring des Tests hinzugefügt!
 
-Die gestubbte Methode *parse* des Objekts *stringParser* verfügt nun über weitere sinon-spezifische Methoden und Eigenschaften, wie bspw. "called".
+Die gestubbte Methode *parse* des Objekts *stringParser* verfügt nun über weitere sinon-spezifische Methoden und Eigenschaften, wie bspw. *called*.
 Mit dieser Eigenschaft können wir **verifizieren** ob *parse* von *add* aufgerufen wurde. 
 Wir prüfen also die **Kommunikation** zwischen Taschenrechner (= SUT) und Parser, einer externen Abhängigkeit, die in unserem Beispiel **indirekte** Inputs liefert. 
 Die vorherige Grafik wird entsprechend um eine **DOC** (= Dependent Upon Component) erweitert:
