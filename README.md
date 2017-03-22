@@ -375,7 +375,7 @@ Sie wären also vom gleichen *Typ* und überall dort, wo ein *StringParser* verl
 ![Alt text](images/readme/uml_diagramm_mit_json_parser.png?raw=true "Title")
 
 Neben Klassen bietet Typescript ein weiteres, aus klassischen Programmiersprachen bekanntes Strukturierungselement an: **Interfaces**.
-Wer Java-Interfaces kennt sollte sich mit der Syntax zur Erstellung von Interfaces in Typeskript problemlos anfreunden können:
+Wer Java-Interfaces kennt sollte sich mit der Syntax zur Erstellung von Interfaces in Typescript problemlos anfreunden können:
 
 ```typescript
 interface Parser {
@@ -453,7 +453,7 @@ Bei Java-Programmierern hat sich Mockito etabliert, wohingegen in der Javascript
 | Mockito.spy(new User()); |  sinon.spy(user)|
 | Mockito.mock(User.class); |  sinon.mock(user)|
 
-### Java/Typeskript Cheat-Sheet
+### Java/Typescript Cheat-Sheet
 
 Typescript erweitert Javascript um einige nützliche Features wie Typen, Klassen und Interfaces. 
 Die Syntax ähnelt stark der von klassischen Programmiersprachen, jedoch gibt es bei der Art und Weise wie Typescript die genannten Sprachmerkmale umsetzt wesentliche Unterschiede.
