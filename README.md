@@ -31,7 +31,6 @@ Mit der jetzt vorhandenen *package.json* können wir externe Pakete herunterlade
 Für dieses Tutorial benötigen wir das Test-Framework [mocha] sowie die Assertion-Bibliothek [chai]:
 
 ```sh
- npm install --global mocha
  npm install --save-dev mocha
  npm install --save-dev chai
 ```
@@ -43,6 +42,21 @@ Zusätzlich müssen wir noch die Typdefinitionen der verwendeten Module installi
  npm install --save-dev @types/mocha
  npm install --save-dev @types/chai
 ```
+
+Zum starten der Tests per Kommandozeile muss *mocha* noch als **globales** Modul installiert werden. 
+Anschließend überprüfen wir die Installation indem wir die version ausgeben:
+
+```sh
+ npm install --global mocha
+ mocha --version
+```
+
+> Hinweis:
+>
+> *mocha* besteht zum einen aus einer Bibliothek zur **Definition** von Test-Suites und -Cases und zum anderen aus einem Skript zur **Ausführung** der Tests.
+> Indem wir *mocha* auch global installieren, können wir projektübergreifend per Kommandozeile Tests ausführen.
+
+
 
 ### Entwicklungsumgebung aufsetzen
 Das Projekt kann im Prinzip mit jedem beliebigen Texteditor bearbeitet werden, jedoch bietet sich eine IDE mit einer guten Autovervollständigung für Typescript an. 
