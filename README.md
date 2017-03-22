@@ -408,7 +408,7 @@ let parser = {
 new StringCalculator(parser); // OK
 ```
 
-Ändern wir beispielsweise den Rückgabetyp der Methode, stimmt die Struktur nicht mehr mit Interface überein und es wird ein Fehler angezeigt:
+Ändern wir beispielsweise den Rückgabetyp der Methode, stimmt die Struktur nicht mehr mit dem *Parser*-Interface überein und es wird ein Fehler angezeigt:
 
 ```typescript
 let parser = {
@@ -420,7 +420,7 @@ new StringCalculator(parser); // Fehler
 > Hinweis:
 >
 > In Java werden Typen anhand des *Namens* eines Interfaces erkannt.
-> Diese Form der Typisierung wird nominal genannt und steht im Gegensatz zur strukturellen typerkennung.
+> Diese Form der Typisierung wird [nominal]genannt und steht im Gegensatz zur strukturellen typerkennung.
 
 
 TODO:
