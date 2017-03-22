@@ -427,7 +427,11 @@ TODO:
 - abstrakte klasse im Gegensatz zu Typescript
 
 
-###  Zusammenfassung und Weiterführendes
+###  Zusammenfassung 
+
+Der finale Quellcode  kann den Ordnern *src* und *test* entnommen werden.
+
+### Exkurs Unit-Tests
 
 Mit Unit-Tests testen wir ob unser eigener Code korrekt ist. 
 Die Prüfung auf Korrektheit kann nur gewährleistet werden wenn der Code **isoliert** getestet wird.
@@ -454,28 +458,7 @@ Bei Java-Programmierern hat sich Mockito etabliert, wohingegen in der Javascript
 | Mockito.mock(User.class); |  sinon.mock(user)|
 
 ### Java/Typescript Cheat-Sheet
-
-Typescript erweitert Javascript um einige nützliche Features wie Typen, Klassen und Interfaces. 
-Die Syntax ähnelt stark der von klassischen Programmiersprachen, jedoch gibt es bei der Art und Weise wie Typescript die genannten Sprachmerkmale umsetzt wesentliche Unterschiede.
-In der folgenden Tabelle sind die Unterschiede am Beispiel von Java gegenübergestellt:
-
-| Java | Typescript |
-| ------ | ------ |
-| ... | ... |
-| ... | ... |
-| ... | ... |
-
-TODO:
-- siehe: https://cyrilletuzi.github.io/javascript-guides/java-to-typescript.html
-
-
-
-
-#### Finales Projekt auschecken und ausführen
-
-TODO
-
-
+Siehe cheat-sheet.html
 
 [npm]: <https://www.npmjs.com/>
 [nodeJS]: <https://nodejs.org/en/>
