@@ -449,13 +449,8 @@ In der folgenden Tabelle sind die vier verschiedenen Arten von Test-Attrappen un
 | mock object | mock | verhält sich analog zum spy
 
 In der Praxis gibt es diverse Frameworks die den Umgang mit Test-Attrapen erheblich vereinfachen.
-Bei Java-Programmierern hat sich Mockito etabliert, wohingegen in der Javascript-Community großteils Sinon.js oder Jasmine eingesetzt wird. Die Syntax zur Erstellung von Test-Attrapen ist bei Mockito und Sinon.JS nahezu identisch wie folgende Tabelle zeigt:
+Bei Java-Programmierern hat sich [Mockito] etabliert, wohingegen in der Javascript-Community großteils [Sinon.js] oder [Jasmine] eingesetzt wird. 
 
-| Mockito | Sinon.js | 
-| ------ | ------ |
-| Mockito.when(User.getName()).thenReturn("Alex"); | sinon.stub(user, 'getName').returns('Alex') |
-| Mockito.spy(new User()); |  sinon.spy(user)|
-| Mockito.mock(User.class); |  sinon.mock(user)|
 
 ### Java/Typescript Cheat-Sheet
 Siehe cheat-sheet.html
@@ -474,6 +469,9 @@ Siehe cheat-sheet.html
 [arrow functions]: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions>
 [1]: <https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen#Keine_Bindung_von_this>
 [nominal]: <https://medium.com/@thejameskyle/type-systems-structural-vs-nominal-typing-explained-56511dd969f4#.xjl4wbxfv>
+[Mockito]: <http://site.mockito.org/>
+[Jasmine]: <https://jasmine.github.io/>
+[Sinon.js]: <http://sinonjs.org/>
  
  
  
