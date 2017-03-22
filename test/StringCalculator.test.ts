@@ -32,7 +32,7 @@ describe('StringCalculator', () => {
     expect(result).to.equal(3);
   });
 
-  xit('soll bei eingabe "1,2,3" das ergebnis 6 zurückgeben', () => {
+  it('soll bei eingabe "1,2,3" das ergebnis 6 zurückgeben', () => {
     let result = calculator.add('1,2,3');
     expect(stringParser.parse.called).to.equal(true);
     expect(result).to.equal(6);
