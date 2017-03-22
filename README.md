@@ -455,6 +455,8 @@ Bei Java-Programmierern hat sich [Mockito] etabliert, wohingegen in der Javascri
 ### Java/Typescript Cheat-Sheet
 Siehe cheat-sheet.html
 
+
+
 [npm]: <https://www.npmjs.com/>
 [nodeJS]: <https://nodejs.org/en/>
 [mocha]: <https://mochajs.org/>
