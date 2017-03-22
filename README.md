@@ -143,10 +143,10 @@ describe('StringCalculator', () => {
 ```
 
 Zunächst importieren wir die Eigenschaft *expect* des Moduls *chai* mittels standardmäßiger ES6-Syntax. 
-Da sich *chai* innerhalb des Ordners *node_modules* befindet, ist es ausreichend lediglich den Modulnamen anzugeben.
+Da sich *chai* innerhalb des Ordners *node_modules* befindet ist es ausreichend lediglich den Modulnamen anzugeben.
 
-Per *describe*-Block definieren wir eine Test-Suite namens "StringCalculator", die als zweiten Parameter eine Funktion erwartet.
-Innerhalb der übergebenen Funktion werden die eigentlichen Test-Cases in Form von von *it*-Blöcken definiert.
+Per *describe*-Block definieren wir eine **Test-Suite** namens "StringCalculator", die als zweiten Parameter eine Funktion erwartet.
+Innerhalb der übergebenen Funktion werden die eigentlichen **Test-Cases** in Form von von *it*-Blöcken definiert.
 Aufgrund der kompakteren Schreibweise verwenden wir zur Deklaration der anonymen Funktionen sogenannte *arrow functions* ("=>").
 
 > Hinweis:
