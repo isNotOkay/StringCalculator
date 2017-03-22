@@ -53,7 +53,7 @@ Anschließend überprüfen wir die Installation indem wir die version ausgeben:
 
 > Hinweis:
 >
-> *mocha* besteht zum einen aus einer Bibliothek zur **Definition** von Test-Suites und -Cases und zum anderen aus einem Skript zur **Ausführung** der Tests.
+> *mocha* besteht zum einen aus einer Bibliothek zur **Definition** von Test-Suites und -Cases und zum anderen aus einem Skript zur **Ausführung** von Tests.
 > Indem wir *mocha* auch global installieren, können wir projektübergreifend per Kommandozeile Tests ausführen.
 
 
@@ -479,8 +479,6 @@ Bei Java-Programmierern hat sich [Mockito] etabliert, wohingegen in der Javascri
 
 ### Java/Typescript Cheat-Sheet
 Siehe cheat-sheet.html
-
-
 
 [npm]: <https://www.npmjs.com/>
 [nodeJS]: <https://nodejs.org/en/about/>
