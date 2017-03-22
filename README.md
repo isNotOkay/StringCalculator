@@ -290,6 +290,11 @@ Ansonsten wird die erste und einzige Zahl unverändert zurückgegeben. Beide Tes
 
 ![Alt text](images/readme/test_success_3.png?raw=true "Title")
 
+
+TODO: Grafik state testing + erläuterung
+
+
+
 Unsere Tests bestätigen uns, dass der Code korrekt funktioniert, jedoch verletzen wir das Single-Responsibility-Prinzip.
 Die *add*-Methode des Taschenrechners führt sowohl das *Parsen* des Eingabeparameters als auch die eigentliche *Kalkulation* durch. 
 Sie besitzt also zwei Verantwortlichkeiten die im Rahmen der Refatcoring-Phase voneinander getrennt werden sollten.
@@ -340,13 +345,13 @@ describe('StringCalculator', () => {
 
   it('soll bei eingabe "1" das ergebnis 1 zurückgeben', () => {
     let result = calculator.add('1');
-    expect(stringParser.parse.called).to.equal(true);
+    expect(stringParser.parse.called).to.equal(true); // verify
     expect(result).to.equal(1);
   });
 
   it('soll bei eingabe "1,2" das ergebnis 3 zurückgeben', () => {
     let result = calculator.add('1,2');
-    expect(stringParser.parse.called).to.equal(true);
+    expect(stringParser.parse.called).to.equal(true); // verify
     expect(result).to.equal(3);
   });
 
@@ -360,7 +365,13 @@ Im before-Block erstellen wir eine neue Instanz des *StringParsers*, stubben die
 Der Konstruktor mit einem Parameter existiert noch nicht und wird nach dem Refactoring des Tests hinzugefügt!
 
 Die gestubbte Methode *parse* des Objekts *stringParser* verfügt nun über weitere sinon-spezifische Methoden und Eigenschaften, wie bspw. "called".
-Mit dieser Eigenschaft können wir **verifizieren** ob *parse* von *add* aufgerufen wurde.  
+Mit dieser Eigenschaft können wir **verifizieren** ob *parse* von *add* aufgerufen wurde. 
+Wir prüfen also die **Kommunikation** zwischen Taschenrechner (= SUT) und Parser, einer externen Abhängigkeit, die in unserem Beispiel **indirekte** Inputs liefert. 
+Die vorherige Grafik wird entsprechend um eine **DOC** (= Dependent Upon Component) erweitert:
+
+
+TODO: Grafik state + interaction testing + erläuterung
+
 Der Erfolg eines Tests ist jetzt allein von der Logik des Taschenrechners abhängig.
 Eine möglicherweise fehlerhafte Implementierung des Parsers hat aufgrund des Stubbings keine Auswirkungen mehr auf die Tests.
 
@@ -473,8 +484,7 @@ new StringCalculator(parser); // Fehler
 > Diese Form der Typisierung wird [nominal] genannt und steht im Gegensatz zur strukturellen Typerkennung.
 
 
-TODO:
-- abstrakte klasse im Gegensatz zu Typescript
+
 
 
 ###  Zusammenfassung 
