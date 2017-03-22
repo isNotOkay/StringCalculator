@@ -4,7 +4,7 @@
 ### Paketmanager und externe Module installieren
 
 Zum Verwalten der Abhängigkeiten nutzen wir den Paketmanager [npm], der Bestandteil der populären JavaScript-Laufzeitumgebung [nodeJS] ist und eine riesige Palette an Javascript-Modulen beherbergt. 
-Hierzu laden wir die aktuellste Version herunter ("Latest Features") und tragen den Installationsordner in den Umgebungsvariablen ein.
+Hierzu laden wir die aktuellste Version herunter ([Latest Features]) und tragen den Installationsordner in den Umgebungsvariablen ein.
 Wir überprüfen ob die Installation erfolgreich war indem wir ein Kommandozeilenfenster öffnen und uns die Version anzeigen lassen:
 
 ```sh
@@ -483,7 +483,8 @@ Siehe cheat-sheet.html
 
 
 [npm]: <https://www.npmjs.com/>
-[nodeJS]: <https://nodejs.org/en/>
+[nodeJS]: <https://nodejs.org/en/about/>
+[Latest Features]: <https://nodejs.org/en/>
 [mocha]: <https://mochajs.org/>
 [chai]: <http://chaijs.com/>
 [Visual Studio Code]: <https://code.visualstudio.com/>
