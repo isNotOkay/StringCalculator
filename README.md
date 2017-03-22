@@ -383,15 +383,48 @@ interface Parser {
 }
 ```
 
+> Hinweis:
+>
+> Anders als in Java können Interfaces in Typescript neben Methoden auch *Eigenschaften* vorgeben.
+
+Analog zu Java sieht auch die Implementierung des Interfaces per *implements* aus:
+
+```typescript
+export class StringParser implements StringParser{
+    parse(stringOfNumbers: string): string[] {
+        return [''];
+    }
+}
+```
+
+Typescript realisiert Interfaces mittels *Duck Typing*, einem Konzept funktionaler Programmiersprachen.
+Beim Duck Typing wird der Typ eines Objekts anhand seiner Struktur, den **Eigenschaften und Methoden**, spezifiziert.
+Dementsprechend ist für den Transpiler folgendes Objektliteral vom Typ *Parser* obwohl es weder eine Instanz von *StringParser* noch eine Instanz von *JsonParser* ist:
+
+```typescript
+let parser = {
+	parse: function(numberOfStrings: string): string[] {}
+}
+new StringCalculator(parser); // OK
+```
+
+Ändern wir beispielsweise den Rückgabetyp der Methode, stimmt die Struktur nicht mehr mit Interface überein und es wird ein Fehler angezeigt:
+
+```typescript
+let parser = {
+	parse: function(numberOfStrings: string): number[] {}
+}
+new StringCalculator(parser); // Fehler
+```
+
+> Hinweis:
+>
+> In Java werden Typen anhand des *Namens* eines Interfaces erkannt.
+> Diese Form der Typisierung wird nominal genannt und steht im Gegensatz zur strukturellen typerkennung.
+
+
 TODO:
-Unterschiede von Interfaces in Java und Typescript
-
-
-
-
-TODO (nicht mehr schritt für schritt, grob weitere Konzepte):
-- custom type
-- abstrakte klasse
+- abstrakte klasse im Gegensatz zu Typescript
 
 
 ###  Zusammenfassung und Weiterführendes
@@ -456,8 +489,8 @@ TODO
 [String Calculator]: <http://osherove.com/tdd-kata-1/>
 [Basisdatentypen]: <https://www.typescriptlang.org/docs/handbook/basic-types.html>
 [arrow functions]: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions>
-[1]: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen#Keine_Bindung_von_this>
-[Single-Responsibility-Prinzip]: 
+[1]: <https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Functions/Pfeilfunktionen#Keine_Bindung_von_this>
+[nominal]: <https://medium.com/@thejameskyle/type-systems-structural-vs-nominal-typing-explained-56511dd969f4#.xjl4wbxfv>
  
  
  
