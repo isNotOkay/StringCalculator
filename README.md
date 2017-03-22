@@ -366,8 +366,8 @@ Der Konstruktor mit einem Parameter existiert noch nicht und wird nach dem Refac
 
 Die gestubbte Methode *parse* des Objekts *stringParser* verfügt nun über weitere sinon-spezifische Methoden und Eigenschaften, wie bspw. *called*.
 Mit dieser Eigenschaft können wir **verifizieren** ob *parse* von *add* aufgerufen wurde. 
-Wir prüfen also die **Kommunikation** zwischen Taschenrechner (= SUT) und Parser, einer externen Abhängigkeit, die in unserem Beispiel **indirekte** Inputs liefert. 
-Die vorherige Grafik wird entsprechend um eine **DOC** (= Dependent Upon Component) erweitert:
+Wir prüfen also die **Kommunikation** zwischen Taschenrechner (= SUT) und Parser, einer externen Abhängigkeit, die **indirekte** Inputs an unsere SUT liefert. 
+Unser Testszenario wird um eine **DOC** (= dependent upon component) erweitert:
 
 
 TODO: Grafik state + interaction testing + erläuterung
