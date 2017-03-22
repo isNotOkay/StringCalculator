@@ -120,16 +120,15 @@ Wir nutzen den *before*-Block zur Instanziierung eines Taschenrechners, unserer 
     let db: Database;
 
     before(() => {
-      db = new Database(); // Arrange
+      // Arrange
     });
 
     it('Test Case', () => {
-      let result = db.find({name: 'max'}); // Act
-      expect(result.success).to.equal(true); // Assert
+      // Act + Assert
     });
 
     after(() => {
-      database.closeConnection();
+      // Cleanup
     });
   });
 ```
