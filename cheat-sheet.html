@@ -58,12 +58,22 @@ user.name = 'moritz'; // OK
     </div>
 
     <h3>Basisdatentypen</h3>
-    <p>asasa</p>
+    <p>In typescript gibt es nur einen Datentyp für Zahlen: <i>number</i>.</p>
     <div class="code-block">
 <pre><code class="java">
+/* Java */
+String name = "max";
+boolean isTrue = true;
+int zahl = 1;
+float zahl = 1.1f;
+int[] zahlen = [1,2,3];
 </code></pre>
-
       <pre><code class="javascript">
+/* Typescript */
+name: string = 'max';
+isTrue: boolean = true;
+zahl: number = 1; // int, float, double...
+zahlen: number[] = [1,2,3];
       </code></pre>
     </div>
 
@@ -71,9 +81,13 @@ user.name = 'moritz'; // OK
     <p>asasa</p>
     <div class="code-block">
 <pre><code class="java">
+String name = "max";
+String sentence = String.format("My Name is %s");
 </code></pre>
 
       <pre><code class="javascript">
+name: string = 'max';
+let sentence = 'My Name is ${name}';
       </code></pre>
     </div>
 
