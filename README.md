@@ -107,6 +107,32 @@ Diese Methode funktioniert unabhängig von der verwendeten IDE.
 > Wir sollten sicherstellen, dass immer nur *ein* Transpiler im Hintergrund aktiv ist.
 > *Entweder* wir nutzen den eingebetteten Transpiler der verwendeten IDE *oder* starten *tsc* in einem separaten Konsolenfenster. 
 
+### Mocha Grundgerüst
+
+TODO: erläutern 
+
+Wie bei Test-Frameworks üblich existieren before- und after-Blöcke zum initialisieren/zurücksetzen testspezifischer Vorbedingungen.
+Wir nutzen den *before*-Block zur Instanziierung eines Taschenrechners, unserer *SUT*. 
+
+```typescript
+ describe('Test Suite', () => {
+    // SUT (= system under test)
+    let db: Database;
+
+    before(() => {
+      db = new Database(); // Arrange
+    });
+
+    it('Test Case', () => {
+      let result = db.find({name: 'max'}); // Act
+      expect(result.success).to.equal(true); // Assert
+    });
+
+    after(() => {
+      database.closeConnection();
+    });
+  });
+```
 
 ### Implementierung
 
@@ -154,8 +180,6 @@ Aufgrund der kompakteren Schreibweise verwenden wir zur Deklaration der anonymen
 > Innerhalb von *arrow functions* ändert sich die Semantik von "this"! [[1]]
 
 
-Wie bei Test-Frameworks üblich existieren before- und after-Blöcke zum initialisieren/zurücksetzen testspezifischer Vorbedingungen.
-Wir nutzen den *before*-Block zur Instanziierung eines Taschenrechners, unserer *SUT*. 
 Im Testfall selbst prüfen wir mit *chai*, dass die zukünftige *add*-Methode das gewünschtes Ergebnis zurückliefert.
 Das Schlüsselwort *let* deklariert den Gültigkeitsbereich der Variablen *calculator* und *result* als *block*, äquivalent zum Block-Scope von klassischen Programmiersprachen.
 

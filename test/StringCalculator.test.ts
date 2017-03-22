@@ -20,6 +20,7 @@ describe('StringCalculator', () => {
       .withArgs('1,2,3').returns([1, 2, 3]);
   });
 
+
   it('soll bei eingabe "1" das ergebnis 1 zurückgeben', () => {
     let result = calculator.add('1');
     expect(stringParser.parse.called).to.equal(true);
