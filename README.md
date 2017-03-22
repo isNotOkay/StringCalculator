@@ -420,7 +420,7 @@ new StringCalculator(parser); // Fehler
 > Hinweis:
 >
 > In Java werden Typen anhand des *Namens* eines Interfaces erkannt.
-> Diese Form der Typisierung wird [nominal]genannt und steht im Gegensatz zur strukturellen typerkennung.
+> Diese Form der Typisierung wird [nominal] genannt und steht im Gegensatz zur strukturellen Typerkennung.
 
 
 TODO:
