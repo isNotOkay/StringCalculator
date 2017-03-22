@@ -108,11 +108,13 @@ Diese Methode funktioniert unabhängig von der verwendeten IDE.
 > *Entweder* wir nutzen den eingebetteten Transpiler der verwendeten IDE *oder* starten *tsc* in einem separaten Konsolenfenster. 
 
 ### Mocha Grundgerüst
-
-TODO: erläutern 
-
 Wie bei Test-Frameworks üblich existieren before- und after-Blöcke zum initialisieren/zurücksetzen testspezifischer Vorbedingungen.
-Wir nutzen den *before*-Block zur Instanziierung eines Taschenrechners, unserer *SUT*. 
+
+TODO: Act, Arrange und Assert erläutern plus SUT
+
+1. **Act**:
+2. **Arrange**:
+3. **Assert**:
 
 ```typescript
  describe('Test Suite', () => {
