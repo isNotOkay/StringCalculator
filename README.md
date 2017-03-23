@@ -345,14 +345,14 @@ Wir importieren sinon in *string-calculator.spec.ts* und führen das Refactoring
  
 ```typescript
 import {expect} from 'chai';
-import * as sinon from 'sinon';
+import {stub} from 'sinon';
 import {StringCalculator} from '../src/StringCalculator';
 import {StringParser} from '../src/StringParser';
 
 describe('StringCalculator', () => {
+  // SUT
   let calculator: StringCalculator;
-  // Keine Typangabe, da wir stringParser stubben.
-  // Ist danach ein "Hybrid" aus den Typen StringParser und SinonStub)
+  // DOC
   let stringParser: any;
 
   before(function () {
@@ -360,16 +360,16 @@ describe('StringCalculator', () => {
     calculator = new StringCalculator(stringParser);
 
     // stringParser stubben und inputs/outputs von "parse" definieren
-    sinon.stub(stringParser, 'parse')
+    stub(stringParser, 'parse')
       .withArgs('1').returns([1])
       .withArgs('1,2').returns([1, 2])
       .withArgs('1,2,3').returns([1, 2, 3]);
   });
 
   it('soll bei eingabe "1" das ergebnis 1 zurückgeben', () => {
-    let result = calculator.add('1');
+    let result = calculator.add('1'); // act
     expect(stringParser.parse.called).to.equal(true); // verify
-    expect(result).to.equal(1);
+    expect(result).to.equal(1);  
   });
 
   it('soll bei eingabe "1,2" das ergebnis 3 zurückgeben', () => {
