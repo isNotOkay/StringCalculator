@@ -439,6 +439,8 @@ Für das Aufsummieren der Werte bietet sich die *reduce*-Methode von Arrays an:
 ```
 
 Iterationen per *reduce* sind weniger fehleranfällig als klassische for-Schleifen, da keine explizite Indizierung notwendig ist.
+Neben *reduce* gibt es noch weitere nützliche [Collection-Methoden].
+
 Der Code ist etwas kompakter und die Tests weiterhin alle erfolgreich.
 
 #### Dritte Iteration
@@ -641,6 +643,7 @@ Siehe cheat-sheet.html
 [Mockito]: <http://site.mockito.org/>
 [Jasmine]: <https://jasmine.github.io/>
 [Sinon.js]: <http://sinonjs.org/>
+[Collection-Methoden]: <http://learnjsdata.com/iterate_data.html>
  
  
  
