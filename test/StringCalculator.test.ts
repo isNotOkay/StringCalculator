@@ -3,7 +3,8 @@ import {stub} from 'sinon';
 import {StringCalculator} from '../src/StringCalculator';
 import {StringParser} from '../src/StringParser';
 
-describe('StringCalculator', () => {
+describe('StringCalculatorTest', () => {
+  // SUT
   let calculator: StringCalculator;
   // Keine Typangabe, da wir stringParser stubben.
   // Ist danach ein "Hybrid" aus den Typen StringParser und SinonStub)

@@ -112,8 +112,8 @@ Wie bei Test-Frameworks üblich existieren before- und after-Blöcke zum initial
 
 TODO: Act, Arrange und Assert erläutern plus SUT
 
-1. **Act**:
-2. **Arrange**:
+1. **Arrange**: Vorbedingungen 
+2. **Act**: Mit SUT interagieren
 3. **Assert**:
 
 ```typescript
@@ -183,7 +183,7 @@ Aufgrund der kompakteren Schreibweise verwenden wir zur Deklaration der anonymen
 > Innerhalb von *arrow functions* ändert sich die Semantik von "this"! [[1]]
 
 
-Im Testfall selbst prüfen wir mit *chai*, dass die zukünftige *add*-Methode das gewünschtes Ergebnis zurückliefert.
+Im Testfall selbst prüfen wir mit *chai*, dass die zukünftige *add*-Methode das gewünschte Ergebnis zurückliefert.
 Das Schlüsselwort *let* deklariert den Gültigkeitsbereich der Variablen *calculator* und *result* als *block*, äquivalent zum Block-Scope von klassischen Programmiersprachen.
 
 
