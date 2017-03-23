@@ -401,7 +401,7 @@ Wir fügen einen Test-Case mit einer Zeichenkette der Länge 3 hinzu...
 
 ![Alt text](images/readme/failing_test_case_laenge_3.png?raw=true "Title")
 
-Für das aufsummieren der Werte bietet sich die *reduce*-Methode von Arrays an:
+Wir summieren alle Zahlen mit einer einfachen for-Schleife:
 
 ```typescript
 add(stringOfNumbers: string) {
