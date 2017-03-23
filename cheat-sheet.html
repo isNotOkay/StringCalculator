@@ -85,20 +85,31 @@ zahlen: number[] = [1,2,3];
 String name = "max";
 String sentence = String.format("My Name is %s");
 </code></pre>
-<pre><code class="javascript">
-/* Javascript */
+      <pre><code class="javascript">
+/* Typescript */
 name: string = 'max';
 let sentence = 'My Name is ${name}';
       </code></pre>
     </div>
 
     <h3>Funktionen</h3>
-    <p>asasa</p>
+    <p>Innerhalb von <i>arrow functions</i> ist <i>this</i> nicht mehr kontextabhängig sondern <b>lexikalisch</b> (wie in Java).</p>
     <div class="code-block">
-<pre><code class="java">
-</code></pre>
-
       <pre><code class="javascript">
+/* Typescript */
+let myObject = {
+    name: 'max',
+    add: () => {
+        console.log(this.name);
+    },
+    subtract: function () {
+        console.log(this.name);
+    }
+};
+let add = myObject.add;
+let subtract = myObject.subtract;
+add(); // 'max'
+subtract(); // Cannot read property 'name' of undefined
       </code></pre>
     </div>
 

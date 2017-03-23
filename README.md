@@ -231,7 +231,6 @@ Jetzt läuft der Testfall durch:
 ![Alt text](images/readme/passed_test_case_1.png?raw=true "Title")
 
 
-
 Gemäß der User Story soll der Taschenrechner beliebig viele Zahlen addieren können. 
 Wir fügen unserer Test Suite einen weiteren Test hinzu, der die Addition von Zeichenketten mit zwei Zahlen prüft:
 
@@ -291,7 +290,10 @@ Ansonsten wird die erste und einzige Zahl unverändert zurückgegeben. Beide Tes
 ![Alt text](images/readme/test_success_3.png?raw=true "Title")
 
 
-TODO: Grafik state testing + erläuterung
+TODO: Grafik state testing erläutern
+
+![Alt text](images/readme/unit_test_interactions_state_testing.png?raw=true "Title")
+
 
 
 
@@ -311,7 +313,9 @@ Wir müssen nun auch die **Kommunikation** zwischen Taschenrechner und Parser, e
 Der Parser liefert **indirekte** Inputs an den Taschenrechner und wird daher im englischen auch **DOC** (= dependent upon document) genannt.
 Unser Testszenario wird entsprechend ergänzt:
 
-TODO: Grafik state + interaction testing + erläuterung
+TODO: interaction testing erläuterung
+
+![Alt text](images/readme/unit_test_interactions_interaction_testing.png?raw=true "Title")
 
 Zuvor haben wir lediglich den *state* des Taschenrechners getestet. Jetzt validieren wir zusätzlich die Kommunikation mit dem Parser.
 
@@ -488,9 +492,6 @@ new StringCalculator(parser); // Fehler
 >
 > In Java werden Typen anhand des *Namens* eines Interfaces erkannt.
 > Diese Form der Typisierung wird [nominal] genannt und steht im Gegensatz zur strukturellen Typerkennung.
-
-
-
 
 
 ###  Zusammenfassung 
