@@ -208,7 +208,7 @@ import { StringCalculator } from '../src/StringCalculator';
 ```
 
 Wir führen den Test aus und gucken was passiert. 
-Dazu geben wir im Kommandozeilenfenster folgenden Befehl ein:
+Dazu geben wir im **Kommandozeilenfenster** folgenden Befehl ein:
 
 ```sh
  mocha
