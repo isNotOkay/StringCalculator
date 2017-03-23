@@ -505,7 +505,7 @@ let parser = {
 new StringCalculator(parser); // OK
 ```
 
-Ändern wir beispielsweise den Rückgabetyp der Methode, stimmt die Struktur nicht mehr mit dem *Parser*-Interface überein und es wird ein Fehler angezeigt:
+Ändern wir beispielsweise den Rückgabetyp der Methode von *string* auf *number*, stimmt die Struktur nicht mehr mit dem *Parser*-Interface überein und es wird ein Fehler angezeigt:
 
 ```typescript
 let parser = {
