@@ -199,7 +199,7 @@ function() {} // regulär
 Im Testfall selbst prüfen wir mit *chai*, dass die zukünftige *add*-Methode das gewünschte Ergebnis zurückliefert.
 Das Schlüsselwort *let* deklariert den Gültigkeitsbereich der Variablen *calculator* und *result* als *block*, äquivalent zum Block-Scope von klassischen Programmiersprachen.
 
-Der Test ist fertig, fehlt noch die Implementierung des Taschenrechners:
+Der Test ist fertig, fehlt noch das *Grundgerüst* des Taschenrechners:
 
 ```typescript
 export class StringCalculator {
