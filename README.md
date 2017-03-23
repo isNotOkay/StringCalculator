@@ -369,8 +369,7 @@ describe('StringCalculator', () => {
     // stringParser stubben und inputs/outputs von "parse" definieren
     stub(stringParser, 'parse')
       .withArgs('1').returns([1])
-      .withArgs('1,2').returns([1, 2])
-      .withArgs('1,2,3').returns([1, 2, 3]);
+      .withArgs('1,2').returns([1, 2]);
   });
 
   it('soll bei eingabe "1" das ergebnis 1 zurückgeben', () => {
@@ -402,11 +401,24 @@ Wir fügen einen Test-Case mit einer Zeichenkette der Länge 3 hinzu...
 
 ```typescript
   it('soll bei eingabe "1,2,3" das ergebnis 6 zurückgeben', () => {
-        stringParser.parse = () => { return [1, 2, 3] }; // parse-Methode austauschen
-        let result = calculator.add('1,2,3');
-        expect(result).to.equal(6);
+         let result = calculator.add('1,2,3');
+         expect(stringParser.parse.called).to.equal(true); // verify
+         expect(result).to.equal(6);
     });
- ```   
+ ```  
+ ... erweitern den stub ...
+```typescript
+  before(function () {
+     stringParser = new StringParser();
+     calculator = new StringCalculator(stringParser);
+ 
+     // stringParser stubben und inputs/outputs von "parse" definieren
+     stub(stringParser, 'parse')
+       .withArgs('1').returns([1])
+       .withArgs('1,2').returns([1, 2])
+       .withArgs('1,2,3').returns([1, 2, 3]);
+   });
+```
 
 ...und bemerken, dass wir die Logik der *add*-Methode überarbeiten müssen:
 
