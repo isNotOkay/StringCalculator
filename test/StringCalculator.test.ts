@@ -15,11 +15,17 @@ describe('StringCalculator', () => {
 
     // stringParser stubben und inputs/outputs von "parse" definieren
     stub(stringParser, 'parse')
+      .withArgs('').returns([])
       .withArgs('1').returns([1])
       .withArgs('1,2').returns([1, 2])
       .withArgs('1,2,3').returns([1, 2, 3]);
   });
 
+  it('soll bei eingabe eines leeren Strings "" das ergebnis 0 zurückgeben', () => {
+    let result = calculator.add('');
+    expect(stringParser.parse.called).to.equal(true);
+    expect(result).to.equal(0);
+  });
 
   it('soll bei eingabe "1" das ergebnis 1 zurückgeben', () => {
     let result = calculator.add('1');

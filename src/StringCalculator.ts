@@ -7,21 +7,20 @@ export class StringCalculator {
     this.stringParser = stringParser;
   }
 
-  // TODO:
-  // - an länge gleich 0 anpassen
+
   add(stringOfNumbers: string) {
     let numbers = this.stringParser.parse(stringOfNumbers);
-    let sum = 0;
-    for (let i = 0; i < numbers.length; i++) {
-      sum += parseInt(numbers[i]);
-    }
-    return sum;
+
+    if (numbers.length === 0) return 0;
+
+    return numbers.reduce((sum, currentValue) => {
+      return sum + parseInt(currentValue);
+    }, 0);
   }
 
 
-
   /*  return numbers.reduce((sum, currentValue) => {
-      return sum + parseInt(currentValue);
-    }, 0);*/
+   return sum + parseInt(currentValue);
+   }, 0);*/
 
 }

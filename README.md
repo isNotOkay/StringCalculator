@@ -415,7 +415,9 @@ add(stringOfNumbers: string) {
 ```   
 
 Alle Tests laufen jetzt erfolgreich durch:
- 
+
+
+![Alt text](images/readme/passed_test_case_4.png?raw=true "Title")
  
  
 Bevor wir uns um die nächste User Story kümmern, passen wir den neu erstellen Code in der *Refactoring-Phase* noch etwas an.
@@ -433,11 +435,65 @@ Für das Aufsummieren der Werte bietet sich die *reduce*-Methode von Arrays an:
 Iterationen per *reduce* sind weniger fehleranfällig als klassische for-Schleifen, da keine explizite Indizierung notwendig ist.
 Der Code ist etwas kompakter und die Tests weiterhin alle erfolgreich.
 
-
-
 > User Story:
 >
 > "Als Nutzer eines *Taschenrechners* erwarte ich bei Eingabe eines leeren Strings das Ergebnis 0".
+
+Wir schreiben einen neuen Test:
+
+```typescript
+  it('soll bei eingabe eines leeren Strings "" das ergebnis 0 zurückgeben', () => {
+    let result = calculator.add('');
+    expect(stringParser.parse.called).to.equal(true);
+    expect(result).to.equal(0);
+  });
+```
+
+Die Implementierung des Parsers ist für unseren Test weiterhin uninteressant. 
+Uns interessiert nur das Verhalten des Taschenrechners, weshalb wir die gestubbte *parse*-Methode wie folgt erweitern:
+
+```typescript
+  before(function () {
+    stringParser = new StringParser();
+    calculator = new StringCalculator(stringParser);
+
+    // stringParser stubben und inputs/outputs von "parse" definieren
+    stub(stringParser, 'parse')
+      .withArgs('').returns([])
+      .withArgs('1').returns([1])
+      .withArgs('1,2').returns([1, 2])
+      .withArgs('1,2,3').returns([1, 2, 3]);
+  });
+```
+
+Bei Eingabe eines leeren Strings wird uns der Parser nun ein leeres Array zurückliefern.
+
+Wir prüfen ob unsere bisherige Implementierung den neuen Testfall abdeckt:
+
+![Alt text](images/readme/failed_test_case_5.png?raw=true "Title")
+
+Wie zu erwarten muss die Implementierung des Taschenrechners angepasst werden. 
+Falls der Parser ein leeres Array zurückgibt soll der Taschenrechner eine *0* zurückliefern und den restlichen Code nicht mehr ausführen:
+
+```typescript
+  add(stringOfNumbers: string) {
+    let numbers = this.stringParser.parse(stringOfNumbers);
+
+    if (numbers.length === 0) return 0;
+
+    return numbers.reduce((sum, currentValue) => {
+      return sum + parseInt(currentValue);
+    }, 0);
+  }
+```
+
+Die neue Code-Zeile fängt den Spezialfall ab und auch die anderen Tests sind nach wie vor grün:
+
+![Alt text](images/readme/unit_test_success_6.png?raw=true "Title")
+
+
+
+
 
 
 ### Erweiterung des Klassenmodells
