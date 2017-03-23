@@ -244,6 +244,7 @@ Wir fügen unserer Test Suite einen weiteren Test hinzu, der die Addition von Ze
 
 ```typescript
 describe('StringCalculator', () => {
+    // SUT
     let calculator: StringCalculator;
 
     before(function () {
@@ -477,7 +478,7 @@ Bei Eingabe eines leeren Strings wird uns der Parser ein Array mit einer Null (=
 
 Wir prüfen ob unsere bisherige Implementierung den neuen Testfall abdeckt:
 
-![Alt text](images/readme/unit_test_success_7.png?raw=true "Title")
+![Alt text](images/readme/unit_test_success_6.png?raw=true "Title")
 
 Alle Tests sind grün, der Code der add-Methode muss nicht weiter angepasst werden. Wir können nun beliebig viele Zahlen addieren.
 
