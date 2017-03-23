@@ -177,7 +177,13 @@ Da sich *chai* innerhalb des Ordners *node_modules* befindet ist es ausreichend 
 
 Per *describe*-Block definieren wir eine **Test-Suite** namens "StringCalculator", die als zweiten Parameter eine Funktion erwartet.
 Innerhalb der übergebenen Funktion werden die eigentlichen **Test-Cases** in Form von von *it*-Blöcken definiert.
-Aufgrund der kompakteren Schreibweise verwenden wir zur Deklaration der anonymen Funktionen sogenannte *arrow functions* ("=>").
+Aufgrund der kompakteren Schreibweise verwenden wir zur Deklaration der anonymen Funktionen sogenannte *arrow functions*:
+
+```typescript
+() => {} // arrow
+
+function() {} // regulär
+```
 
 > Hinweis:
 > 
