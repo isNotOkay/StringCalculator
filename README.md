@@ -328,18 +328,14 @@ Das Klassendiagramm sieht nun folgendermaßen aus:
 ![Alt text](images/readme/uml_diagramm_2.png?raw=true "Title")
 
 
-
-Wir müssen nun auch die **Kommunikation** zwischen Taschenrechner und Parser, einer externen Abhängigkeit, testen.
+Zuvor haben wir lediglich den *state* des Taschenrechners getestet.
+Jetzt müssen wir auch die **Kommunikation** zwischen Taschenrechner und Parser, einer externen Abhängigkeit, testen.
 Der Parser liefert **indirekte** Inputs an den Taschenrechner und wird daher im englischen auch **DOC** (= dependent upon document) genannt.
-Unser Testszenario wird entsprechend ergänzt:
-
-TODO: interaction testing erläuterung
+Das Diagramm für unser Testszenario wird entsprechend um die Interaktion mit **DOCs** (dargestellt als *A*, *B*, *C* und *D*) ergänzt:
 
 ![Alt text](images/readme/unit_test_interaction_testing.png?raw=true "Title")
 
-Zuvor haben wir lediglich den *state* des Taschenrechners getestet. Jetzt validieren wir zusätzlich die Kommunikation mit dem Parser.
-
-
+TODO: kurz konkreten zusammenhang mit Klassen aus Beispiel erklären 
 
 Damit die Logik unserer Unit-Tests für den Taschenrechner nicht von Seiteneffekten des Parsers negativ beeinflusst wird, müssen wir auf eine Testattrappe zurückgreifen.
 Das heißt wir *faken* den Aufruf der *parse*-Methode anstatt die echte, mit potenziellen Fehlern behaftete Implementierung, zu verwenden.
