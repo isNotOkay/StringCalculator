@@ -414,7 +414,10 @@ add(stringOfNumbers: string) {
   }
 ```   
 
-Alle Tests laufen jetzt erfolgreich durch. 
+Alle Tests laufen jetzt erfolgreich durch:
+ 
+ 
+ 
 Bevor wir uns um die nächste User Story kümmern, passen wir den neu erstellen Code in der *Refactoring-Phase* noch etwas an.
 Für das Aufsummieren der Werte bietet sich die *reduce*-Methode von Arrays an:
 
@@ -427,11 +430,14 @@ Für das Aufsummieren der Werte bietet sich die *reduce*-Methode von Arrays an:
   }
 ```
 
-Die Tests sind weiterhin alle erfolgreich und der Code etwas kompakter. 
-Zudem sind Iterationen per *reduce* weniger fehleranfällig als klassische for-Schleifen, da keine explizite Indizierung notwendig ist.
+Iterationen per *reduce* sind weniger fehleranfällig als klassische for-Schleifen, da keine explizite Indizierung notwendig ist.
+Der Code ist etwas kompakter und die Tests weiterhin alle erfolgreich.
 
 
-- string der länge 0
+
+> User Story:
+>
+> "Als Nutzer eines *Taschenrechners* erwarte ich bei Eingabe eines leeren Strings das Ergebnis 0".
 
 
 ### Erweiterung des Klassenmodells
@@ -461,6 +467,9 @@ Sie wären also vom gleichen *Typ* und überall dort, wo ein *StringParser* verl
 
 
 ![Alt text](images/readme/uml_diagramm_mit_json_parser.png?raw=true "Title")
+
+
+#### Strukturelle und nominelle Typerkennung
 
 Neben Klassen bietet Typescript ein weiteres, aus klassischen Programmiersprachen bekanntes Strukturierungselement an: **Interfaces**.
 Wer Java-Interfaces kennt sollte sich mit der Syntax zur Erstellung von Interfaces in Typescript problemlos anfreunden können:
@@ -504,6 +513,11 @@ let parser = {
 }
 new StringCalculator(parser); // Fehler
 ```
+
+TODO:
+- Hinweis, dass aus clean-Code Perspektive Objektliterale aufgrund von Code-Duplizierung schlechter sind als bspw. Verwendung von typen mit "new"
+- Beispiel zur strukturellen Typerkennung und worauf man achten muss
+- Link zum Artikel aus der Informatik Aktuell
 
 > Hinweis:
 >
