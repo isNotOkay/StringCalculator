@@ -122,11 +122,11 @@ TODO: Act, Arrange und Assert erläutern plus SUT
     let db: Database;
 
     before(() => {
-      // Arrange
+      // Setup
     });
 
     it('Test Case', () => {
-      // Act + Assert
+      //Arrange, Act und Assert
     });
 
     after(() => {
@@ -158,6 +158,7 @@ Der erste Test besteht darin, bei Übergabe eines Strings mit nur einer Zahl, eb
 import { expect } from 'chai';
 
 describe('StringCalculator', () => {
+    // SUT
     let calculator: StringCalculator;
 
     before(() =>  {
@@ -165,8 +166,8 @@ describe('StringCalculator', () => {
     });
 
     it('soll bei eingabe "1" das ergebnis 1 zurückgeben', () => {
-        let result = calculator.add('1');
-        expect(result).to.equal(1);
+        let result = calculator.add('1'); // Act
+        expect(result).to.equal(1); // Assert
     });
 });
 ```
