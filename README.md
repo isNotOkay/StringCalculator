@@ -427,7 +427,7 @@ Alle Tests laufen jetzt erfolgreich durch:
  
  
 Bevor wir uns um die nächste User Story kümmern, passen wir den neu erstellen Code in der *Refactoring-Phase* noch etwas an.
-Für das Aufsummieren der Werte bietet sich die *reduce*-Methode von Arrays an:
+Für das Aufsummieren der Werte bietet sich die *reduce*-Methode von Arrays an, eine von mehreren nützlichen [Collection-Methoden]:
 
 ```typescript
   add(stringOfNumbers: string) {
@@ -437,10 +437,6 @@ Für das Aufsummieren der Werte bietet sich die *reduce*-Methode von Arrays an:
     }, 0);
   }
 ```
-
-Iterationen per *reduce* sind weniger fehleranfällig als klassische for-Schleifen, da keine explizite Indizierung notwendig ist.
-Neben *reduce* gibt es noch weitere nützliche [Collection-Methoden].
-
 Der Code ist etwas kompakter und die Tests weiterhin alle erfolgreich.
 
 #### Dritte Iteration
