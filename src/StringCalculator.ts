@@ -11,8 +11,17 @@ export class StringCalculator {
   // - an länge gleich 0 anpassen
   add(stringOfNumbers: string) {
     let numbers = this.stringParser.parse(stringOfNumbers);
-    return numbers.reduce((sum, currentValue) => {
-      return sum + parseInt(currentValue);
-    }, 0);
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+      sum += parseInt(numbers[i]);
+    }
+    return sum;
   }
+
+
+
+  /*  return numbers.reduce((sum, currentValue) => {
+      return sum + parseInt(currentValue);
+    }, 0);*/
+
 }

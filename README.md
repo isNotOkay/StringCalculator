@@ -404,16 +404,33 @@ Wir fügen einen Test-Case mit einer Zeichenkette der Länge 3 hinzu...
 Für das aufsummieren der Werte bietet sich die *reduce*-Methode von Arrays an:
 
 ```typescript
+add(stringOfNumbers: string) {
+    let numbers = this.stringParser.parse(stringOfNumbers);
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+      sum += parseInt(numbers[i]);
+    }
+    return sum;
+  }
+```   
+
+Alle Tests laufen jetzt erfolgreich durch. 
+Bevor wir uns um die nächste User Story kümmern, passen wir den neu erstellen Code in der *Refactoring-Phase* noch etwas an.
+Für das Aufsummieren der Werte bietet sich die *reduce*-Methode von Arrays an:
+
+```typescript
   add(stringOfNumbers: string) {
     let numbers = this.stringParser.parse(stringOfNumbers);
     return numbers.reduce((sum, currentValue) => {
       return sum + parseInt(currentValue);
     }, 0);
   }
-```   
+```
 
-TODO:  
-- TDD implementierung für beliebige länge
+Die Tests sind weiterhin alle erfolgreich und der Code etwas kompakter. 
+Zudem sind Iterationen per *reduce* weniger fehleranfällig als klassische for-Schleifen, da keine explizite Indizierung notwendig ist.
+
+
 - string der länge 0
 
 
@@ -520,6 +537,12 @@ Bei Java-Programmierern hat sich [Mockito] etabliert, wohingegen in der Javascri
 
 
 ### Java/Typescript Cheat-Sheet
+
+Todo:
+- in Tabelle auf objektliterale eingehen
+=> in Java stattdessen anonyme Klassen?
+=> Beispiel mit Katze, Hund und wie strukturelle Interfaces in Typescript funktionieren
+
 Siehe cheat-sheet.html
 
 [npm]: <https://www.npmjs.com/>
