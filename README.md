@@ -337,8 +337,6 @@ Das Diagramm für unser Testszenario wird entsprechend um die Interaktion mit **
 
 TODO: kurz konkreten zusammenhang mit Klassen aus Beispiel erklären 
 
-Damit die Logik unserer Unit-Tests für den Taschenrechner nicht von Seiteneffekten des Parsers negativ beeinflusst wird, müssen wir auf eine Testattrappe zurückgreifen.
-Das heißt wir *faken* den Aufruf der *parse*-Methode anstatt die echte, mit potenziellen Fehlern behaftete Implementierung, zu verwenden.
 Wir passen unsere Tests an die neuen Gegebenheiten an und *mocken* den Taschenrechner mit Hilfe von Sinon.js:
 
 ```sh
@@ -395,11 +393,8 @@ describe('StringCalculator', () => {
 
 Im before-Block erstellen wir eine neue Instanz des *StringParsers*, stubben die *parse*-Methode und übergeben das instanziierte Objekt als Argument an den *StringCalculator*.
 Der Konstruktor mit einem Parameter existiert noch nicht und wird nach dem Refactoring des Tests hinzugefügt!
-
 Die gestubbte Methode *parse* des Objekts *stringParser* verfügt nun über weitere sinon-spezifische Methoden und Eigenschaften, wie bspw. *called*.
-Mit dieser Eigenschaft können wir **verifizieren** ob *parse* von *add* aufgerufen wurde. 
-Der Erfolg eines Tests ist jetzt allein von der Logik des Taschenrechners abhängig.
-Eine möglicherweise fehlerhafte Implementierung des Parsers hat aufgrund des Stubbings keine Auswirkungen mehr auf die Tests.
+Mit dieser Eigenschaft können wir **verifizieren** ob *parse* von *add* aufgerufen wurde.
 
 Bisher haben wir sichergestellt, dass der Taschenrechner Zeichenketten mit einer Länge von 1 und 2 addieren kann. 
 Wie sieht es jedoch mit einer beliebigen Länge aus?
