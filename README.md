@@ -500,10 +500,10 @@ Die neue Code-Zeile fängt den Spezialfall ab und auch die anderen Tests sind na
 ![Alt text](images/readme/unit_test_success_6.png?raw=true "Title")
 
 
-
-
-
-
+Der Taschenrechner ist nun in der Lage beliebig viele Zahlen addieren zu können. 
+Als gute Übung eignet sich die Implementierung aller vier Grundrechenarten.
+An dieser Stelle beenden wir jedoch den TDD-Zyklus und betrachten im nächsten Abschnitt weitere nützliche Typescript-Features anhand konkreter Beispiele.
+ 
 ### Erweiterung des Klassenmodells
 
 Nehmen wir an es existiert folgende User Story:
