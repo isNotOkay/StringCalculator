@@ -137,7 +137,9 @@ TODO: Act, Arrange und Assert erläutern plus SUT
 
 ### Implementierung
 
-Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder Änderung in Javascript umgewandelt wird, ist es an der Zeit, die erste User Story vorzustellen:
+Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder Änderung in Javascript umgewandelt wird, ist es an der Zeit, die erste User Story vorzustellen.
+
+#### Erste Iteration
 
 > User Story:
 >
@@ -231,6 +233,11 @@ Jetzt läuft der Testfall durch:
 ![Alt text](images/readme/passed_test_case_1.png?raw=true "Title")
 
 
+
+#### Zweite Iteration
+
+// TODO: User story aufsplitten und hier auflisten
+
 Gemäß der User Story soll der Taschenrechner beliebig viele Zahlen addieren können. 
 Wir fügen unserer Test Suite einen weiteren Test hinzu, der die Addition von Zeichenketten mit zwei Zahlen prüft:
 
@@ -293,7 +300,6 @@ Ansonsten wird die erste und einzige Zahl unverändert zurückgegeben. Beide Tes
 TODO: Grafik state testing erläutern
 
 ![Alt text](images/readme/unit_test_interactions_state_testing.png?raw=true "Title")
-
 
 
 
@@ -434,6 +440,8 @@ Für das Aufsummieren der Werte bietet sich die *reduce*-Methode von Arrays an:
 
 Iterationen per *reduce* sind weniger fehleranfällig als klassische for-Schleifen, da keine explizite Indizierung notwendig ist.
 Der Code ist etwas kompakter und die Tests weiterhin alle erfolgreich.
+
+#### Dritte Iteration
 
 > User Story:
 >
