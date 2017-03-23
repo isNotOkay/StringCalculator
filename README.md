@@ -335,7 +335,7 @@ Unser Testszenario wird entsprechend ergänzt:
 
 TODO: interaction testing erläuterung
 
-![Alt text](images/readme/unit_test_interactions_interaction_testing.png?raw=true "Title")
+![Alt text](images/readme/unit_test_interaction_testing.png?raw=true "Title")
 
 Zuvor haben wir lediglich den *state* des Taschenrechners getestet. Jetzt validieren wir zusätzlich die Kommunikation mit dem Parser.
 
