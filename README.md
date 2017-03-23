@@ -135,6 +135,12 @@ TODO: Act, Arrange und Assert erläutern plus SUT
   });
 ```
 
+> Hinweis:
+>
+> Der *describe*-Block entspricht in Java der mit *@Suite* annotierten Klasse.
+
+> Der *it*-Block entspricht in Java mit *@Test* annotierten Methoden.
+
 ### Implementierung
 
 Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder Änderung in Javascript umgewandelt wird, ist es an der Zeit, die erste User Story vorzustellen.
