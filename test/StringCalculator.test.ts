@@ -16,7 +16,7 @@ describe('StringCalculatorTest', () => {
 
     // stringParser stubben und inputs/outputs von "parse" definieren
     stub(stringParser, 'parse')
-      .withArgs('').returns([])
+      .withArgs('').returns([0])
       .withArgs('1').returns([1])
       .withArgs('1,2').returns([1, 2])
       .withArgs('1,2,3').returns([1, 2, 3]);

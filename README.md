@@ -465,43 +465,25 @@ Uns interessiert nur das Verhalten des Taschenrechners, weshalb wir die gestubbt
 
     // stringParser stubben und inputs/outputs von "parse" definieren
     stub(stringParser, 'parse')
-      .withArgs('').returns([])
+      .withArgs('').returns([0])
       .withArgs('1').returns([1])
       .withArgs('1,2').returns([1, 2])
       .withArgs('1,2,3').returns([1, 2, 3]);
   });
 ```
 
-Bei Eingabe eines leeren Strings wird uns der Parser nun ein leeres Array zurückliefern.
+Bei Eingabe eines leeren Strings wird uns der Parser ein Array mit einer Null (= "[0]") zurückliefern.
 
 Wir prüfen ob unsere bisherige Implementierung den neuen Testfall abdeckt:
 
-![Alt text](images/readme/failed_test_case_5.png?raw=true "Title")
+![Alt text](images/readme/unit_test_success_7.png?raw=true "Title")
 
-Wie zu erwarten muss die Implementierung des Taschenrechners angepasst werden. 
-Falls der Parser ein leeres Array zurückgibt soll der Taschenrechner eine *0* zurückliefern und den restlichen Code nicht mehr ausführen:
-
-```typescript
-  add(stringOfNumbers: string) {
-    let numbers = this.stringParser.parse(stringOfNumbers);
-
-    if (numbers.length === 0) return 0;
-
-    return numbers.reduce((sum, currentValue) => {
-      return sum + parseInt(currentValue);
-    }, 0);
-  }
-```
-
-Die neue Code-Zeile fängt den Spezialfall ab und auch die anderen Tests sind nach wie vor grün:
-
-![Alt text](images/readme/unit_test_success_6.png?raw=true "Title")
+Alle Tests sind grün, der Code der add-Methode muss nicht weiter angepasst werden. Wir können nun beliebig viele Zahlen addieren.
 
 
-Der Taschenrechner ist nun in der Lage beliebig viele Zahlen addieren zu können. 
-Als gute Übung eignet sich die Implementierung **aller vier** Grundrechenarten.
-An dieser Stelle beenden wir jedoch den TDD-Zyklus und betrachten im nächsten Abschnitt weitere nützliche Typescript-Features anhand konkreter Beispiele.
- 
+An dieser Stelle beenden wir den TDD-Zyklus und betrachten im nächsten Abschnitt weitere nützliche Typescript-Features anhand konkreter Beispiele.
+Als gute Übung eignet sich die Erweiterung des Taschenrechners um **alle vier** Grundrechenarten.
+
 ### Erweiterung des Klassenmodells
 
 Nehmen wir an es existiert folgende User Story:
