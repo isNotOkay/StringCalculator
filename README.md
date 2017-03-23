@@ -186,7 +186,6 @@ Aufgrund der kompakteren Schreibweise verwenden wir zur Deklaration der anonymen
 Im Testfall selbst prüfen wir mit *chai*, dass die zukünftige *add*-Methode das gewünschte Ergebnis zurückliefert.
 Das Schlüsselwort *let* deklariert den Gültigkeitsbereich der Variablen *calculator* und *result* als *block*, äquivalent zum Block-Scope von klassischen Programmiersprachen.
 
-
 Der Test ist fertig, fehlt noch die Implementierung des Taschenrechners:
 
 ```typescript
@@ -208,7 +207,8 @@ Weil es sich beim *StringCalculator* um eine eigens angelegte Klasse handelt mü
 import { StringCalculator } from '../src/StringCalculator';
 ```
 
-Wir führen den Test aus und gucken was passiert:
+Wir führen den Test aus und gucken was passiert. 
+Dazu geben wir im Kommandozeilenfenster folgenden Befehl ein:
 
 ```sh
  mocha
@@ -218,7 +218,7 @@ Wir führen den Test aus und gucken was passiert:
 ![Alt text](images/readme/failed_testcase_1.png?raw=true "Title")
 
 Der Test schlägt wie zu erwarten fehl.
-Wir liefern eine 1 zurück und führen den Test erneut aus: 
+Wir **faken** die add-Methode, liefern eine 1 zurück und führen den Test erneut aus: 
 
 ```typescript
 export class StringCalculator {
