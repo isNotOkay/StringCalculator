@@ -152,7 +152,6 @@ In Code ausgedrückt:
 calculator.add("1"); // => returns 1
 ```
 
-Es gibt also ein Objekt *calculator* mit einer Methode *add*, die eine Zahl in Form eines Strings entgegennimmt und zurückliefert.
 Wir schreiben einen ersten Test:
 
 ```typescript
