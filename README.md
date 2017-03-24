@@ -144,7 +144,7 @@ Nun da das Grundgerüst eines Unit-Tests vorgestellt wurde, alle Abhängigkeiten
 
 > User Story:
 >
-> "Als Nutzer eines *Taschenrechners* erwarte ich bei Eingabe eines Strings mir nur einer Zahl, dass das Ergebnis eben diese Zahl ist."
+> "Als Nutzer eines *Taschenrechners* erwarte ich bei Eingabe einer Zahl in Form eines Strings, dass das Ergebnis eben diese Zahl ist."
 
 In Code ausgedrückt:
 
