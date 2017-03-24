@@ -108,17 +108,10 @@ Diese Methode funktioniert unabhängig von der verwendeten IDE.
 > *Entweder* wir nutzen den eingebetteten Transpiler der verwendeten IDE *oder* starten *tsc* in einem separaten Konsolenfenster. 
 
 ### Mocha Grundgerüst
-Wie bei Test-Frameworks üblich existieren before- und after-Blöcke zum initialisieren/zurücksetzen testspezifischer Vorbedingungen.
-
-TODO: Act, Arrange und Assert erläutern plus SUT
-
-1. **Arrange**: Vorbedingungen 
-2. **Act**: Mit SUT interagieren
-3. **Assert**:
 
 ```typescript
  describe('Test Suite', () => {
-    // SUT (= system under test)
+    // SUT (= system under test, Objekt das getestet werden soll)
     let db: Database;
 
     before(() => {
@@ -126,7 +119,9 @@ TODO: Act, Arrange und Assert erläutern plus SUT
     });
 
     it('Test Case', () => {
-      //Arrange, Act und Assert
+      // Arrange (test-spezifische Objekte wie bspw. stubs/mocks/spies initialisieren)
+      // Act (für Test relevante Methoden der SUT ausführen)
+      // Assert (Testergebnis validieren)
     });
 
     after(() => {
@@ -135,11 +130,11 @@ TODO: Act, Arrange und Assert erläutern plus SUT
   });
 ```
 
-> Hinweis:
->
-> Der *describe*-Block entspricht in Java der mit *@Suite* annotierten Klasse.
+Wie bei Test-Frameworks üblich existieren in Mocha *Test-Suites* und *Test-Cases*.
+* *describe*-Blöcke entsprechen bei JUnit einer mit *@Suite* annotierten Klasse
+* *it*-Blöcke entsprechen bei Junit einer mit *@Test* annotierten Klasse
 
-> Der *it*-Block entspricht in Java mit *@Test* annotierten Methoden.
+Weiterhin gibt es *before*- und *after*-Blöcke, die analog zu Junit zum initialisieren/zurücksetzen allgemeiner Bedingungen dienen.
 
 ### Implementierung
 
