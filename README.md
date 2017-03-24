@@ -322,7 +322,7 @@ Diesbezüglich lagern wir das Parsen in eine externe Klasse namens *StringParser
 Das Klassendiagramm sieht nun folgendermaßen aus:
 
 
-![Alt text](images/readme/uml_diagramm_2.png?raw=true "Title")
+![Alt text](images/readme/uml_diagramm_1.png?raw=true "Title")
 
 
 Zuvor haben wir lediglich den *state* des Taschenrechners getestet.
@@ -527,7 +527,7 @@ Beide Parser hätten die gleiche Schnittstelle *parse* und würden sich lediglic
 Sie wären also vom gleichen *Typ* und überall dort, wo ein *StringParser* verlangt wird, könnte auch ein *JsonParser* verwendet werden:
 
 
-![Alt text](images/readme/uml_diagramm_mit_json_parser.png?raw=true "Title")
+![Alt text](images/readme/uml_diagramm_2.png?raw=true "Title")
 
 
 #### Strukturelle und nominelle Typerkennung
