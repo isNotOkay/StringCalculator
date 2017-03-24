@@ -138,7 +138,7 @@ Weiterhin gibt es *before*- und *after*-Blöcke, die analog zu Junit zum initial
 
 ### Implementierung
 
-Nun da alle Abhängigkeiten installiert sind und der Code automatisch nach jeder Änderung in Javascript umgewandelt wird, ist es an der Zeit, die erste User Story vorzustellen.
+Nun da das Grundgerüst eines Unit-Tests vorgestellt wurde, alle Abhängigkeiten installiert sind und der Code automatisch nach jeder Änderung in Javascript umgewandelt wird, ist es an der Zeit, die erste User Story vorzustellen.
 
 #### Erste Iteration
 
