@@ -144,16 +144,16 @@ Nun da das Grundgerüst eines Unit-Tests vorgestellt wurde, alle Abhängigkeiten
 
 > User Story:
 >
-> "Als Nutzer eines *Taschenrechners* möchte ich *beliebig viele Zahlen* in Form einer *Zeichenkette* addieren."
+> "Als Nutzer eines *Taschenrechners* erwarte ich bei Eingabe eines Strings mir nur einer Zahl, dass das Ergebnis eben diese Zahl ist."
 
 In Code ausgedrückt:
 
 ```typescript
-calculator.add("1,2,3,4,5"); // => returns 15
+calculator.add("1"); // => returns 1
 ```
 
-Wir haben also ein Objekt *calculator* mit einer Methode *add*, die einen String aus komma-sepparierten Zahlen entgegennimmt, alle Zahlen aufaddiert und zurückliefert.
-Der erste Test besteht darin, bei Übergabe eines Strings mit nur einer Zahl, eben nur diese Zahl zurückzugeben:
+Es gibt also ein Objekt *calculator* mit einer Methode *add*, die eine Zahl in Form eines Strings entgegennimmt und zurückliefert.
+Wir schreiben einen ersten Test:
 
 ```typescript
 import { expect } from 'chai';
@@ -244,10 +244,12 @@ Jetzt läuft der Testfall durch:
 
 #### Zweite Iteration
 
-// TODO: User story aufsplitten und hier auflisten
+> User Story:
+>
+> "Als Nutzer eines *Taschenrechners* erwarte ich bei Eingabe eines Strings zweier Zahlen, dass das Ergebnis die Summe beider Zahlen ist."
 
-Gemäß der User Story soll der Taschenrechner beliebig viele Zahlen addieren können. 
-Wir fügen unserer Test Suite einen weiteren Test hinzu, der die Addition von Zeichenketten mit zwei Zahlen prüft:
+Wir fügen unserer Test Suite einen weiteren Test hinzu, der die Addition von Zeichenketten mit zwei Zahlen prüft. 
+Dabei separieren wird ie Zahlen per Komma:
 
 ```typescript
 describe('StringCalculator', () => {
