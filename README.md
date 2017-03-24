@@ -334,7 +334,7 @@ Das Diagramm für unser Testszenario wird entsprechend um die Interaktion mit **
 
 ![Alt text](images/readme/unit_test_interaction_testing.png?raw=true "Title")
 
-Damit der Code unseres Unit-Tests nach wie vor **isoliert** getestet werden kann, müssen alle DOCs durch Test-Attrapen ersetzt werden.
+Damit der Code unseres Unit-Tests nach wie vor **isoliert** getestet werden kann, müssen alle DOCs durch **Test-Attrapen** ersetzt werden.
 In unserem Beispiel ist das lediglich der Parser.
 
 Wir passen unsere Tests an die neuen Gegebenheiten an und *mocken* den Parser mit Hilfe von Sinon.js:
@@ -595,7 +595,6 @@ Der finale Quellcode  kann den Ordnern *src* und *test* entnommen werden.
 Mit Unit-Tests testen wir ob unser eigener Code korrekt ist. 
 Die Prüfung auf Korrektheit kann nur gewährleistet werden wenn der Code **isoliert** getestet wird.
 Das heißt es müssen alle externen Klassen und Objekte, die mit unserem Code kommunizieren, durch *Test-Attrapen* ersetzt werden.
-Somit kann ausgeschlossen werden, dass unsere Tests durch Seiteneffekte externer Module negativ beeinflusst werden.  
 
 Den zu testenden Code nennt man auch *SUT* (= *System under Test*). 
 In der folgenden Tabelle sind die vier verschiedenen Arten von Test-Attrappen und deren Interaktionen mit der SUT aufgelistet:
