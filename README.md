@@ -307,7 +307,7 @@ Ansonsten wird die erste und einzige Zahl unverändert zurückgegeben. Beide Tes
 ![Alt text](images/readme/test_success_3.png?raw=true "Title")
 
 
-Bisher haben wir eine Test-Klasse *StringCalculator.spec.ts* , die den Taschenrechner *StringCalculator.ts* (= **SUT**) mit **direkten Eingaben** in Form einer komma-separierten Zeichenkette versorgt und als **direkte Ausgabe** die Summe der übergebenen Zahlen zurückbekommt.
+Bisher haben wir eine Test-Klasse *StringCalculator.spec.ts* , die den Taschenrechner *StringCalculator.ts* (= **SUT**) mit **direkten Eingaben** in Form einer kommaseparierten Zeichenkette versorgt und als **direkte Ausgabe** die Summe der übergebenen Zahlen zurückbekommt.
 Verallgemeinert in folgendem Diagramm dargestellt:
 
 ![Alt text](images/readme/unit_test_interactions_state_testing.png?raw=true "Title")
@@ -328,7 +328,7 @@ Das Klassendiagramm sieht nun folgendermaßen aus:
 Zuvor haben wir lediglich den *state* des Taschenrechners getestet.
 Jetzt müssen wir auch die **Kommunikation** zwischen Taschenrechner und Parser, einer externen Abhängigkeit, testen.
 
-Der Parser nimmt **indirekte Ausgaben** des Taschenrechners als komma-separierte Zahlen in Form einer Zeichenkette entgegen und liefert ein Array aus komma-separierten Zahlen als **indirekte Eingaben** zurück. 
+Der Parser nimmt **indirekte Ausgaben** des Taschenrechners als kommaseparierte Zahlen in Form einer Zeichenkette entgegen und liefert ein Array aus kommaseparierten Zahlen als **indirekte Eingaben** zurück. 
 Aufgrund der indirekten Eingaben und Ausgaben wird er im englischen auch **DOC** (= dependent upon document) genannt.
 Das Diagramm für unser Testszenario wird entsprechend um die Interaktion mit **DOCs** (dargestellt als *A*, *B*, *C* und *D*) ergänzt:
 
