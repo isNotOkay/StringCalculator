@@ -307,7 +307,8 @@ Ansonsten wird die erste und einzige Zahl unverändert zurückgegeben. Beide Tes
 ![Alt text](images/readme/test_success_3.png?raw=true "Title")
 
 
-TODO: Grafik state testing erläutern
+Bisher haben wir eine Test-Klasse *StringCalculator.spec.ts* , die den Taschenrechner *StringCalculator.ts* (= **SUT**) mit **direkten Eingaben** in Form einer komma-separierten Zeichenkette versorgt und als **direkte Ausgabe** die Summe der übergebenen Zahlen zurückbekommt.
+Verallgemeinert in folgendem Diagramm dargestellt:
 
 ![Alt text](images/readme/unit_test_interactions_state_testing.png?raw=true "Title")
 
