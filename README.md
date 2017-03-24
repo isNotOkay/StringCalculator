@@ -575,11 +575,6 @@ let parser = {
 new StringCalculator(parser); // Fehler
 ```
 
-TODO:
-- Hinweis, dass aus clean-Code Perspektive Objektliterale aufgrund von Code-Duplizierung schlechter sind als bspw. Verwendung von typen mit "new"
-- Beispiel zur strukturellen Typerkennung und worauf man achten muss
-- Link zum Artikel aus der Informatik Aktuell
-
 > Hinweis:
 >
 > In Java werden Typen anhand des *Namens* eines Interfaces erkannt.
