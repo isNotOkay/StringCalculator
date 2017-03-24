@@ -328,8 +328,8 @@ Das Klassendiagramm sieht nun folgendermaßen aus:
 Zuvor haben wir lediglich den *state* des Taschenrechners getestet.
 Jetzt müssen wir auch die **Kommunikation** zwischen Taschenrechner und Parser, einer externen Abhängigkeit, testen.
 
-Der Parser nimmt **indirekte Ausgaben** als komma-separierter Zahlen in Form einer Zeichenkette entgegen und liefert ein Array aus komma-separierten Zahlen als **indirekte Eingaben** an den Taschenrechner zurück. 
-Er wird daher im englischen auch **DOC** (= dependent upon document) genannt.
+Der Parser nimmt **indirekte Ausgaben** des Taschenrechners als komma-separierte Zahlen in Form einer Zeichenkette entgegen und liefert ein Array aus komma-separierten Zahlen als **indirekte Eingaben** zurück. 
+Aufgrund der indirekten Eingaben und Ausgaben wird er im englischen auch **DOC** (= dependent upon document) genannt.
 Das Diagramm für unser Testszenario wird entsprechend um die Interaktion mit **DOCs** (dargestellt als *A*, *B*, *C* und *D*) ergänzt:
 
 ![Alt text](images/readme/unit_test_interaction_testing.png?raw=true "Title")
