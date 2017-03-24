@@ -149,7 +149,7 @@ Nun da das Grundgerüst eines Unit-Tests vorgestellt wurde, alle Abhängigkeiten
 In Code ausgedrückt:
 
 ```typescript
-calculator.add("1"); // => returns 1
+calculator.add('1'); // => returns 1
 ```
 
 Wir schreiben einen ersten Test:
