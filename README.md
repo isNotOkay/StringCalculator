@@ -327,14 +327,17 @@ Das Klassendiagramm sieht nun folgendermaßen aus:
 
 Zuvor haben wir lediglich den *state* des Taschenrechners getestet.
 Jetzt müssen wir auch die **Kommunikation** zwischen Taschenrechner und Parser, einer externen Abhängigkeit, testen.
-Der Parser liefert **indirekte** Inputs an den Taschenrechner und wird daher im englischen auch **DOC** (= dependent upon document) genannt.
+
+Der Parser nimmt **indirekte Ausgaben** als komma-separierter Zahlen in Form einer Zeichenkette entgegen und liefert ein Array aus komma-separierten Zahlen als **indirekte Eingaben** an den Taschenrechner zurück. 
+Er wird daher im englischen auch **DOC** (= dependent upon document) genannt.
 Das Diagramm für unser Testszenario wird entsprechend um die Interaktion mit **DOCs** (dargestellt als *A*, *B*, *C* und *D*) ergänzt:
 
 ![Alt text](images/readme/unit_test_interaction_testing.png?raw=true "Title")
 
-TODO: kurz konkreten zusammenhang mit Klassen aus Beispiel erklären 
+Damit der Code unseres Unit-Tests nach wie vor **isoliert** getestet werden kann, müssen alle DOCs durch Test-Attrapen ersetzt werden.
+In unserem Beispiel ist das lediglich der Parser.
 
-Wir passen unsere Tests an die neuen Gegebenheiten an und *mocken* den Taschenrechner mit Hilfe von Sinon.js:
+Wir passen unsere Tests an die neuen Gegebenheiten an und *mocken* den Parser mit Hilfe von Sinon.js:
 
 ```sh
  npm install --save-dev sinon
