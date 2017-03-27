@@ -581,6 +581,30 @@ new StringCalculator(parser); // Fehler
 > Diese Form der Typisierung wird [nominal] genannt und steht im Gegensatz zur strukturellen Typerkennung.
 
 
+
+### Besonderheiten und Best-Practices
+
+#### Interfaces vs. abstrakte Klassen
+- Typsicherheit zur Laufzeit nur bei (abstrakten)-Klassen
+- Interfaces existieren nur zu Design-Zeit, nicht zur Laufzeit (am beispiel von instanceof)
+- transpilierter Javascript-Code enthält keine Typinformationen
+
+#### Any-Type
+Deklarieren wir eine Variable mit Typ any, teilen wir dem Compiler mit, dass wir die Struktur eines Objekts nicht kennen.
+Das ist zum Beispiel bei externen Javascript-Bibliotheken der Fall, zu denen keine d.ts-Dateien mit Typdeklarationen existieren.
+In allen anderen Fällen sollte immer ein aussagekrätiger Typ angegeben werden um strikte Typsicherheit gewährleisten zu können.
+Gemäß dem Motto: **Simply find an interface for the Any type**, kurz: **S.F.I.A.T** (siehe Buch S. 43 "Mastering Typescript").
+
+
+
+#### 
+
+
+
+
+
+
+
 ###  Zusammenfassung 
 
 Der finale Quellcode  kann den Ordnern *src* und *test* entnommen werden.

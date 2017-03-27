@@ -6,7 +6,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/vs.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/dracula.min.css">
   <link rel="stylesheet" href="./cheat-sheet.css">
   <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
@@ -93,7 +93,8 @@ let sentence = 'My Name is ${name}';
     </div>
 
     <h3>Funktionen</h3>
-    <p>Innerhalb von <i>arrow functions</i> ist <i>this</i> nicht mehr kontextabhängig sondern <b>lexikalisch</b> (wie in Java).</p>
+    <p>Innerhalb von <i>arrow functions</i> ist <i>this</i> nicht mehr kontextabhängig sondern <b>lexikalisch</b> (wie
+      in Java).</p>
     <div class="code-block">
       <pre><code class="javascript">
 /* Typescript */
@@ -113,31 +114,94 @@ subtract(); // Cannot read property 'name' of undefined
       </code></pre>
     </div>
 
-  </div>
 
-  <h3>Collections</h3>
-  <p>asasa</p>
-  <div class="code-block">
+    <h3>Collections</h3>
+    <p>asasa</p>
+    <div class="code-block">
 <pre><code class="java">
 </code></pre>
 
-    <pre><code class="javascript">
+      <pre><code class="javascript">
       </code></pre>
-  </div>
+    </div>
 
-  </div>
+    <h3>Klassen</h3>
+    <p></p>
+    <div class="code-block">
+<pre><code class="java">
+  public class User {
+    private String name;
 
-  <h3>Klassen</h3>
-  <p>asasa</p>
-  <div class="code-block">
+    public User(String name){
+        this.name = name;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+  }
+</code></pre>
+
+      <pre><code class="javascript">
+class User {
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  getName() {
+    return this.name;
+  }
+}
+      </code></pre>
+    </div>
+
+    <h3>Interfaces</h3>
+    <p>asasa</p>
+    <div class="code-block">
 <pre><code class="java">
 </code></pre>
 
-    <pre><code class="javascript">
+      <pre><code class="javascript">
       </code></pre>
-  </div>
+    </div>
+
+    <h3>Abstrakte Klassen</h3>
+    <p>Gleiche funktionsweise wie in Java.
+      Abstrakte Klassen lassen sich nicht instanziieren und können im Gegensatz zu Interfaces Implementierungslogik enthalten.
+
+    <div class="code-block">
+<pre><code class="java">
+
+</code></pre>
+
+      <pre><code class="javascript">
+/* Typescript - Declaration */
+abstract class User {
+    abstract getAge(): number;
+}
+let user = new User(); // Cannot create an instance of the abstract class 'User'.
+
+/* Typescript - Usage */
+class SpecificUser implements User {
+
+  getAge(): number {
+    return 10;
+  }
+}
+      </code></pre>
+    </div>
 
   </div>
+
+
+
+
+
+
+  </div>
+
 
 </article>
 

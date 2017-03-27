@@ -1,5 +1,4 @@
-
-
 interface Parser {
-    parse(numberOfStrings: string): string[]
+  parse(numberOfStrings: string): string[]
 }
+
