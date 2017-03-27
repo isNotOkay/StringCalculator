@@ -666,11 +666,6 @@ Bei Java-Programmierern hat sich [Mockito] etabliert, wohingegen in der Javascri
 
 ### Java/Typescript Cheat-Sheet
 
-Todo:
-- in Tabelle auf objektliterale eingehen
-=> in Java stattdessen anonyme Klassen?
-=> Beispiel mit Katze, Hund und wie strukturelle Interfaces in Typescript funktionieren
-
 Siehe cheat-sheet.html
 
 [npm]: <https://www.npmjs.com/>
