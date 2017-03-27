@@ -605,13 +605,14 @@ var user;
 
 Bei (abstrakten) Klassen wird wesentlich mehr Code generiert. 
 Eine Klasse wird in Javascript per **Constructor-Function** realisiert, sie *existiert* also zur Laufzeit .
-Dementsprechend kann per **instanceof**-Operator der Typ von Instanzen einer Klasse bestimmt werden, was bei Interfaces hingegen nicht der Fall ist.
+Dementsprechend kann per **instanceof**-Operator der Typ von Instanzen einer Klasse bestimmt werden, was bei Interfaces hingegen nicht der Fall ist (Siehe auch S. 96 - 98, "Mastering Typescript").
 
 ```typescript
 abstract class User { 
     abstract getAge():number;
 }
-let user: User;
+class SpecificUser implements User(){}
+let user: User = new SpecificUser();
 ```
 
 Übersetzter Code:
@@ -625,7 +626,6 @@ var User = (function () {
 var user;
 ```
 
-// TODO: unterschied zu abstrakten klassen
 
 #### Any-Type
 Deklarieren wir eine Variable mit Typ any, teilen wir dem Compiler mit, dass wir die Struktur eines Objekts nicht kennen.
@@ -633,9 +633,6 @@ Das ist zum Beispiel bei externen Javascript-Bibliotheken der Fall, zu denen kei
 In allen anderen Fällen sollte immer ein aussagekrätiger Typ angegeben werden um strikte Typsicherheit gewährleisten zu können.
 Gemäß dem Motto: **Simply find an interface for the Any type**, kurz: **S.F.I.A.T** (siehe Buch S. 43 "Mastering Typescript").
 
-
-
-#### 
 
 
 
