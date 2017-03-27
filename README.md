@@ -634,10 +634,11 @@ In allen anderen Fällen sollte immer ein aussagekrätiger Typ angegeben werden 
 Gemäß dem Motto: **Simply find an interface for the Any type**, kurz: **S.F.I.A.T** (siehe Buch S. 43 "Mastering Typescript").
 
 
+#### Function Callbacks
 
+// TODO: Erläutern
 
-
-
+(siehe Buch S. 53-58 "Mastering Typescript")
 
 
 ###  Zusammenfassung 

@@ -160,10 +160,31 @@ class User {
     <h3>Interfaces</h3>
     <p>asasa</p>
     <div class="code-block">
+
 <pre><code class="java">
+/* Java */
+interface User {
+    public int getAge();
+}
+
+class SpecificUser implements User {
+    public int getAge() {
+        return 10;
+    }
+}
 </code></pre>
 
       <pre><code class="javascript">
+/* Typescript */
+interface User {
+    getAge(): number;
+}
+
+class SpecificUser implements User {
+    getAge(): number {
+        return 10;
+    }
+}
       </code></pre>
     </div>
 
@@ -173,6 +194,10 @@ class User {
 
     <div class="code-block">
 <pre><code class="java">
+/* Java */
+public abstract class User {
+   abstract int getAge();
+}
 
 </code></pre>
 
@@ -184,7 +209,7 @@ abstract class User {
 let user = new User(); // Cannot create an instance of the abstract class 'User'.
 
 /* Typescript - Usage */
-class SpecificUser implements User {
+class SpecificUser extends User {
 
   getAge(): number {
     return 10;
