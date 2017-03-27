@@ -585,9 +585,47 @@ new StringCalculator(parser); // Fehler
 ### Besonderheiten und Best-Practices
 
 #### Interfaces vs. abstrakte Klassen
-- Typsicherheit zur Laufzeit nur bei (abstrakten)-Klassen
-- Interfaces existieren nur zu Design-Zeit, nicht zur Laufzeit (am beispiel von instanceof)
-- transpilierter Javascript-Code enthält keine Typinformationen
+Interfaces und Basisdatentypen existieren nur zu Design-Zeit. 
+Alle Typinformationen werden bei der Übersetzung in Javascript ignoriert, weshalb zur Laufzeit keine Rückschlüsse auf den Typ eines Objekts möglich sind.
+
+```typescript
+/* Typescript */
+interface User { 
+    age: number
+}
+let user: User;
+```
+
+Der obige Typescript-Code wird wie folgt übersetzt:
+
+```typescript
+/* Resultierender Javascript-Code */
+var user;
+```
+
+Bei (abstrakten) Klassen wird wesentlich mehr Code generiert. 
+Eine Klasse wird in Javascript per **Constructor-Function** realisiert, sie *existiert* also zur Laufzeit .
+Dementsprechend kann per **instanceof**-Operator der Typ von Instanzen einer Klasse bestimmt werden, was bei Interfaces hingegen nicht der Fall ist.
+
+```typescript
+abstract class User { 
+    abstract getAge():number;
+}
+let user: User;
+```
+
+Übersetzter Code:
+
+```typescript
+var User = (function () {
+    function User() {
+    }
+    return User;
+}());
+var user;
+```
+
+// TODO: unterschied zu abstrakten klassen
 
 #### Any-Type
 Deklarieren wir eine Variable mit Typ any, teilen wir dem Compiler mit, dass wir die Struktur eines Objekts nicht kennen.
